@@ -14,6 +14,7 @@ import {
   Award,
   GraduationCap,
   CheckCircle2,
+  Phone,
 } from 'lucide-react';
 import HeroBackground from './HeroBackground';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
@@ -182,6 +183,17 @@ export default function Hero() {
             >
               <Mail size={14} />
               <span>Email</span>
+            </a>
+
+            <span className="text-zinc-800">•</span>
+
+            <a
+              href={`tel:${PORTFOLIO_DATA.personal.phoneRaw}`}
+              className="flex items-center gap-1.5 hover:text-emerald-400 transition-colors py-1"
+              data-cursor-text="CALL"
+            >
+              <Phone size={14} />
+              <span>{PORTFOLIO_DATA.personal.phone}</span>
             </a>
           </motion.div>
         </div>

@@ -82,6 +82,7 @@ npm start
 
 ## 📬 Connect with Me
 
+- **Phone / WhatsApp**: [+91 9566413640](tel:+919566413640) • [Chat on WhatsApp](https://wa.me/919566413640)
 - **Email**: [logeshdhanushkaran@gmail.com](mailto:logeshdhanushkaran@gmail.com)
 - **LinkedIn**: [linkedin.com/in/dhanushkaran-m-35ab77330](https://www.linkedin.com/in/dhanushkaran-m-35ab77330)
 - **GitHub**: [github.com/dhanushkaran5](https://github.com/dhanushkaran5)

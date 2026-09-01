@@ -13,12 +13,15 @@ import {
   MapPin,
   Clock,
   ArrowUpRight,
+  Phone,
+  MessageCircle,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -28,6 +31,12 @@ export default function ContactSection() {
     navigator.clipboard.writeText(PORTFOLIO_DATA.personal.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(PORTFOLIO_DATA.personal.phone);
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 2500);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -98,41 +107,104 @@ export default function ContactSection() {
               </motion.p>
             </div>
 
-            {/* Quick Copy Email Box */}
+            {/* Direct Phone & WhatsApp Box */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
+              className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+            >
+              <div className="min-w-0">
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1 flex items-center gap-1.5">
+                  <Phone size={11} className="text-emerald-400" />
+                  <span>PHONE / WHATSAPP</span>
+                </span>
+                <p className="text-sm sm:text-base font-mono text-zinc-100 font-bold tracking-wide">
+                  {PORTFOLIO_DATA.personal.phone}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={`tel:${PORTFOLIO_DATA.personal.phoneRaw}`}
+                  data-cursor-text="CALL"
+                  className="px-3 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/25 transition-colors flex items-center gap-1.5 text-xs font-mono"
+                  aria-label="Call direct phone"
+                >
+                  <Phone size={13} />
+                  <span>Call</span>
+                </a>
+
+                <a
+                  href={PORTFOLIO_DATA.personal.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cursor-text="CHAT"
+                  className="px-3 py-2 rounded-xl bg-white/[0.05] hover:bg-emerald-500/20 text-zinc-300 hover:text-emerald-300 border border-white/10 transition-colors flex items-center gap-1.5 text-xs font-mono"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <MessageCircle size={13} className="text-emerald-400" />
+                  <span>WhatsApp</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={handleCopyPhone}
+                  className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1 text-xs font-mono"
+                  aria-label="Copy phone number"
+                >
+                  {phoneCopied ? (
+                    <Check size={14} className="text-emerald-400" />
+                  ) : (
+                    <Copy size={14} />
+                  )}
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Quick Copy Email Box */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
               className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-4"
             >
               <div className="min-w-0">
-                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1">
-                  DIRECT EMAIL
+                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1 flex items-center gap-1.5">
+                  <Mail size={11} className="text-emerald-400" />
+                  <span>DIRECT EMAIL</span>
                 </span>
                 <p className="text-xs sm:text-sm font-mono text-zinc-200 truncate font-semibold">
                   {PORTFOLIO_DATA.personal.email}
                 </p>
               </div>
 
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="shrink-0 p-2.5 rounded-xl bg-white/[0.05] hover:bg-emerald-500/20 text-zinc-300 hover:text-emerald-300 border border-white/10 transition-colors flex items-center gap-1.5 text-xs font-mono"
-                aria-label="Copy email address"
-              >
-                {copied ? (
-                  <>
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+                  data-cursor-text="EMAIL"
+                  className="px-3 py-2 rounded-xl bg-white/[0.05] hover:bg-emerald-500/20 text-zinc-300 hover:text-emerald-300 border border-white/10 transition-colors flex items-center gap-1.5 text-xs font-mono"
+                  aria-label="Open mail client"
+                >
+                  <Mail size={13} />
+                  <span>Mail</span>
+                </a>
+
+                <button
+                  type="button"
+                  onClick={handleCopyEmail}
+                  className="p-2 rounded-xl bg-white/[0.05] hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 transition-colors flex items-center gap-1 text-xs font-mono"
+                  aria-label="Copy email address"
+                >
+                  {copied ? (
                     <Check size={14} className="text-emerald-400" />
-                    <span className="text-emerald-400">Copied!</span>
-                  </>
-                ) : (
-                  <>
+                  ) : (
                     <Copy size={14} />
-                    <span>Copy</span>
-                  </>
-                )}
-              </button>
+                  )}
+                </button>
+              </div>
             </motion.div>
 
             {/* Social Network Cards */}

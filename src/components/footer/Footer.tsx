@@ -54,6 +54,12 @@ export default function Footer() {
           >
             Email
           </a>
+          <a
+            href={`tel:${PORTFOLIO_DATA.personal.phoneRaw}`}
+            className="hover:text-emerald-400 transition-colors"
+          >
+            Call: {PORTFOLIO_DATA.personal.phone}
+          </a>
 
           <button
             onClick={scrollToTop}

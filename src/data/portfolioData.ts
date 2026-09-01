@@ -50,6 +50,9 @@ export const PORTFOLIO_DATA = {
     location: 'Coimbatore, Tamil Nadu, India',
     timezone: 'Asia/Kolkata',
     email: 'logeshdhanushkaran@gmail.com',
+    phone: '+91 9566413640',
+    phoneRaw: '+919566413640',
+    whatsapp: 'https://wa.me/919566413640',
     github: 'https://github.com/dhanushkaran5',
     linkedin: 'https://www.linkedin.com/in/dhanushkaran-m-35ab77330',
     resumeUrl: '/resume.pdf',
@@ -459,9 +462,11 @@ DEV TOOLS: Git, GitHub, VS Code, Postman, Render, Vercel`,
   Office:      Government of India Patent Office
   Focus:       Dynamic vehicular volume estimation & adaptive signal phase control.`,
     contact: `GET IN TOUCH:
+  Phone:    +91 9566413640 (Call / WhatsApp)
   Email:    logeshdhanushkaran@gmail.com
   GitHub:   https://github.com/dhanushkaran5
   LinkedIn: https://www.linkedin.com/in/dhanushkaran-m-35ab77330
+  Location: Coimbatore, Tamil Nadu, India
   Status:   Available for opportunities`,
     resume: `Direct resume link: /resume.pdf
   You can click the 'Download Resume' button in the hero or visit /resume.pdf directly.`,
