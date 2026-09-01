@@ -155,58 +155,58 @@ export const PORTFOLIO_DATA = {
       githubUrl: 'https://github.com/dhanushkaran5',
     },
     {
-      id: 'smart-traffic-system',
-      title: 'Smart Traffic Management System',
-      subtitle: 'Published Indian Patent — No. 202541099319 A',
+      id: 'ai-summarizer',
+      title: 'AI Document Summarizer & Insight Engine',
+      subtitle: 'Intelligent Knowledge Extraction & Evidence Tracer',
       category: 'AI / ML',
       year: '2025',
       featured: false,
       description:
-        'Patented intelligent urban traffic system that monitors vehicular bottleneck density dynamically and computes adaptive signal timings in real-time.',
+        'An intelligent document understanding platform that goes beyond basic summarization—extracting knowledge graphs, answering complex questions, tracing verifiable evidence, comparing multi-source documents, and synthesizing deep structured insights.',
       problem:
-        'Static timer-based traffic lights induce severe bottlenecks and fuel wastage during asymmetric rush-hour vehicular surges.',
+        'Lengthy, multi-page technical and business documents contain fragmented data that is exhausting to analyze manually without missing critical citations or context.',
       solution:
-        'Designed an algorithmic control architecture combining sensor feedback loops and predictive density queueing to autonomously adjust signal green-times.',
+        'Built an AI-driven platform leveraging LLMs, Retrieval-Augmented Generation (RAG), and semantic vector search to provide interactive questioning with grounded evidence citations.',
       metrics: [
-        'Official Indian Patent Application No. 202541099319 A',
-        'Published in Official Patent Journal, Nov 2025',
-        'Proportional signal delay reduction model',
+        'Semantic Chunking & Embedding Pipeline',
+        'Multi-Document Comparative Synthesis',
+        'Verifiable Grounded Evidence Citations',
       ],
       features: [
-        'Real-time vehicular queue density estimation',
-        'Adaptive green-signal cycle calculation',
-        'Priority lane routing protocols for emergency services',
-        'Robust fault tolerance for sensor degradation',
+        'Automated structured multi-format document parsing',
+        'Conversational Q&A with direct evidence citation links',
+        'Side-by-side multi-document comparative analysis',
+        'Key metric extraction and automated insight synthesis',
       ],
-      technologies: ['Python', 'Computer Vision', 'IoT Protocols', 'Algorithmic Optimization'],
-      githubUrl: 'https://github.com/dhanushkaran5',
+      technologies: ['React', 'Python', 'Flask', 'LLMs', 'RAG', 'Vector Search', 'Tailwind CSS'],
+      githubUrl: 'https://github.com/dhanushkaran5/AI-Summarizer',
     },
     {
-      id: 'resume-screening-engine',
-      title: 'Intelligent Candidate Screening Engine',
-      subtitle: 'Enterprise Talent Ranking & Keyword Matrix Parser',
-      category: 'Full Stack',
-      year: '2024',
+      id: 'signbridge-ai',
+      title: 'SignBridge-AI',
+      subtitle: 'Real-Time Sign Language Recognition & Translation',
+      category: 'AI / ML',
+      year: '2025',
       featured: false,
       description:
-        'Full-stack enterprise recruitment microservice that automates initial candidate screening via structured ranking matrices and semantic scoring.',
+        'An AI-powered accessibility platform for real-time sign language recognition and translation using Computer Vision, Deep Learning, MediaPipe, React and Flask, designed for scalable ASL & ISL support.',
       problem:
-        'High volume of inbound resumes overwhelms recruitment teams, leading to missed qualified talent or slow hiring cycles.',
+        'Individuals relying on sign language face persistent communication barriers across education, healthcare, and daily digital interactions due to lack of real-time translation tools.',
       solution:
-        'Built a high-performance Spring Boot backend with clean REST endpoints, persistent MySQL storage, and an intuitive candidate dashboard.',
+        'Developed an end-to-end computer vision and deep learning translation engine that detects 3D hand landmarks in real-time from webcam video to translate gestures into natural text and synthetic speech.',
       metrics: [
-        'Sub-100ms API response times',
-        'Scalable relational schema design',
-        'Clean multi-criteria filtering',
+        'Real-time low-latency 3D hand tracking',
+        'High-accuracy deep neural network classifier',
+        'Dual ASL & ISL dataset compatibility',
       ],
       features: [
-        'Structured resume metadata extraction',
-        'Weighted skill score computation against job criteria',
-        'Role-based access management and dashboard views',
-        'CSV/JSON batch candidate export pipelines',
+        'Real-time webcam 3D landmark extraction via MediaPipe',
+        'Deep neural network gesture classification with TensorFlow',
+        'Bidirectional sign-to-text and synthetic voice translation',
+        'Modular architecture supporting ASL and ISL dataset expansions',
       ],
-      technologies: ['Java', 'Spring Boot', 'MySQL', 'REST APIs', 'React', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/dhanushkaran5',
+      technologies: ['Python', 'TensorFlow', 'MediaPipe', 'OpenCV', 'React', 'Flask', 'Deep Learning'],
+      githubUrl: 'https://github.com/dhanushkaran5/SignBridge-AI',
     },
   ] as Project[],
 
@@ -446,9 +446,12 @@ DEV TOOLS: Git, GitHub, VS Code, Postman, Render, Vercel`,
     projects: `SELECTED PROJECTS:
   1. Tree Plantation & Carbon Reduction Calculator [Live on Render | Hackathon Finalist]
      URL: https://tree-plantation-calculator-1.onrender.com/
-  2. AI Placement Mentor Agent [React, Spring Boot, LLM, Hugging Face]
-  3. Smart Traffic Management System [Indian Patent Published: No. 202541099319 A]
-  4. Intelligent Candidate Screening Engine [Java, Spring Boot, MySQL]`,
+  2. AI Document Summarizer & Insight Engine [React, Python, Flask, RAG, LLM]
+     GitHub: https://github.com/dhanushkaran5/AI-Summarizer
+  3. SignBridge-AI [Real-Time Sign Language Recognition & Translation]
+     GitHub: https://github.com/dhanushkaran5/SignBridge-AI
+  4. AI Placement Mentor Agent [React, Spring Boot, LLM, Hugging Face]
+     GitHub: https://github.com/dhanushkaran5`,
     patent: `OFFICIAL PATENT PUBLICATION:
   Title:       Smart Traffic Management System for Urban Congestion
   Application: Indian Patent Application No. 202541099319 A

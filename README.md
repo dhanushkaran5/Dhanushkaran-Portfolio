@@ -49,7 +49,7 @@ This repository hosts Dhanushkaran's developer portfolio built with Next.js 15, 
 - **Hero Recruiter Spotlight**: 2-column layout with glowing executive portrait card, floating verified credential badges, and dynamic typography.
 - **Bento Grid System**: 12-column responsive Bento grid featuring identity, current technical focus, live IST clock, and patent highlights.
 - **Interactive Developer CLI**: macOS-style terminal emulator supporting `$about`, `$skills`, `$projects`, `$patent`, `$contact`, `$resume`, and `$clear`.
-- **Project Showcase**: Live case study of the *Tree Plantation & Carbon Reduction Calculator* (Render deployment), *AI Placement Mentor Agent*, and *Intelligent Candidate Screening Engine*.
+- **Project Showcase**: Live case study of the *Tree Plantation & Carbon Reduction Calculator* (Render deployment), *AI Document Summarizer & Insight Engine*, *SignBridge-AI Accessibility Platform*, and *AI Placement Mentor Agent*.
 - **Verified Credentials**: Certifications from NPTEL, Infosys Springboard, AWS, and IBM.
 
 ---
