@@ -138,7 +138,7 @@ export default function InteractiveTerminal() {
             className="p-5 font-mono text-xs sm:text-sm h-80 sm:h-96 overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-white/10"
           >
             <div className="text-zinc-500 text-xs">
-              Type <span className="text-emerald-400 font-semibold">'help'</span> for available commands, or click the quick action chips below.
+              Type <span className="text-emerald-400 font-semibold">&apos;help&apos;</span> for available commands, or click the quick action chips below.
             </div>
 
             {/* History outputs */}

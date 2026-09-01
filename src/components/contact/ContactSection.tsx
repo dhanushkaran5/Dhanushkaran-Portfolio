@@ -81,7 +81,7 @@ export default function ContactSection() {
                 transition={{ delay: 0.1 }}
                 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight"
               >
-                Let's build{' '}
+                Let&apos;s build{' '}
                 <span className="bg-gradient-to-r from-emerald-400 to-white bg-clip-text text-transparent">
                   something useful.
                 </span>

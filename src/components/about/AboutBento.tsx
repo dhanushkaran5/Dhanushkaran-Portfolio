@@ -286,7 +286,7 @@ export default function AboutBento() {
                   06 // ENGINEERING PHILOSOPHY
                 </span>
                 <blockquote className="text-sm sm:text-base font-medium text-zinc-200 italic">
-                  "{bento.philosophy.quote}"
+                  &ldquo;{bento.philosophy.quote}&rdquo;
                 </blockquote>
               </div>
             </div>
