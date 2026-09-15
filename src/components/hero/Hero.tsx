@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Instagram, ArrowRight, Sparkles, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Instagram, ArrowRight, ChevronDown } from 'lucide-react';
 import HeroBackground from './HeroBackground';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
@@ -82,17 +82,6 @@ export default function Hero() {
           </span>
           <br />
           <span className="text-zinc-500">CGPA 8.10 • PATENT INVENTOR</span>
-        </motion.div>
-
-        {/* Small Intro Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/[0.03] border border-white/10 text-[11px] font-mono text-zinc-300 mb-5 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
-        >
-          <Sparkles className="w-3 h-3 text-[#ff8e66]" />
-          <span className="tracking-widest uppercase">PORTFOLIO // 2025–2027</span>
         </motion.div>
 
         {/* Large Editorial Headline */}
