@@ -1,15 +1,16 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   ExternalLink,
   Github,
   Sparkles,
-  TreePine,
   CheckCircle2,
-  TrendingUp,
-  Activity,
+  FileText,
+  ArrowRight,
   Award,
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
@@ -18,31 +19,33 @@ export default function FeaturedProject() {
   const project = PORTFOLIO_DATA.projects.find((p) => p.featured) || PORTFOLIO_DATA.projects[0];
 
   return (
-    <div className="mb-20">
+    <div className="mb-16">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
-        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-8 sm:p-10 lg:p-12 overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+        className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-8 sm:p-10 lg:p-12 overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.6)]"
       >
         {/* Ambient background glow */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none group-hover:bg-emerald-500/15 transition-colors" />
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#ff6b3d]/10 blur-[120px] rounded-full pointer-events-none group-hover:bg-[#ff6b3d]/15 transition-colors" />
 
         <div className="flex flex-col lg:flex-row gap-10 items-start justify-between">
           {/* Left Column: Project Narrative */}
           <div className="flex-1 max-w-2xl">
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-2.5 mb-6">
-              <span className="px-3 py-1 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 text-xs font-mono font-semibold flex items-center gap-1.5">
+              <span className="px-3 py-1 rounded-full bg-[#ff6b3d]/15 text-[#ff8e66] border border-[#ff6b3d]/30 text-xs font-mono font-semibold flex items-center gap-1.5">
                 <Sparkles size={12} />
                 FEATURED PROJECT
               </span>
 
-              <span className="px-3 py-1 rounded-full bg-white/[0.05] text-zinc-300 border border-white/10 text-xs font-mono flex items-center gap-1.5">
-                <Award size={12} className="text-amber-400" />
-                Hackathon Finalist
-              </span>
+              {project.badge && (
+                <span className="px-3 py-1 rounded-full bg-white/[0.05] text-zinc-300 border border-white/10 text-xs font-mono flex items-center gap-1.5">
+                  <Award size={12} className="text-[#ff8e66]" />
+                  <span>{project.badge}</span>
+                </span>
+              )}
 
               <span className="text-xs font-mono text-zinc-500">
                 {project.year} • {project.category}
@@ -54,7 +57,7 @@ export default function FeaturedProject() {
               {project.title}
             </h3>
 
-            <p className="text-sm font-mono text-emerald-400/90 mb-6">
+            <p className="text-sm font-mono text-[#ff8e66]/90 mb-6">
               {project.subtitle}
             </p>
 
@@ -75,7 +78,7 @@ export default function FeaturedProject() {
               </div>
 
               <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06]">
-                <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-wider block mb-1">
+                <span className="text-[10px] font-mono text-[#ff8e66] font-bold uppercase tracking-wider block mb-1">
                   The Solution
                 </span>
                 <p className="text-xs text-zinc-400 leading-relaxed">
@@ -91,18 +94,18 @@ export default function FeaturedProject() {
               </span>
               {project.features.slice(0, 4).map((feat, idx) => (
                 <div key={idx} className="flex items-center gap-2.5 text-xs text-zinc-300">
-                  <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+                  <CheckCircle2 size={14} className="text-[#ff6b3d] shrink-0" />
                   <span>{feat}</span>
                 </div>
               ))}
             </div>
 
             {/* Tech Badges */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-white/[0.06] mb-8">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-lg bg-white/[0.04] text-zinc-200 border border-white/[0.08] text-xs font-mono"
+                  className="px-3 py-1 rounded-lg bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-zinc-300"
                 >
                   {tech}
                 </span>
@@ -116,103 +119,50 @@ export default function FeaturedProject() {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-cursor-text="OPEN"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500 text-black font-semibold text-xs tracking-wider uppercase hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]"
+                  className="px-6 py-3 rounded-full bg-white text-black font-semibold text-xs font-mono tracking-wider uppercase inline-flex items-center gap-2 hover:bg-zinc-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.25)]"
                 >
-                  <span>Launch Live Calculator</span>
-                  <ExternalLink size={14} />
+                  <span>Live App</span>
+                  <ExternalLink size={13} />
                 </a>
               )}
+
+              <Link
+                href={`/projects/${project.slug}`}
+                className="px-5 py-3 rounded-full bg-white/[0.05] hover:bg-white/10 text-white border border-white/15 font-mono text-xs inline-flex items-center gap-2 transition-colors"
+              >
+                <FileText size={13} />
+                <span>Case Study</span>
+              </Link>
 
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  data-cursor-text="CODE"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white border border-white/15 text-xs font-mono transition-colors"
+                  className="w-10 h-10 rounded-full bg-white/[0.05] hover:bg-white/10 text-zinc-300 hover:text-white border border-white/15 flex items-center justify-center transition-colors"
+                  aria-label="View Source on GitHub"
                 >
-                  <Github size={15} />
-                  <span>GitHub Repository</span>
+                  <Github size={16} />
                 </a>
               )}
             </div>
           </div>
 
-          {/* Right Column: Live Interactive Mockup Card */}
-          <div className="w-full lg:w-[420px] shrink-0">
-            <div className="rounded-2xl border border-white/10 bg-[#09090D] p-6 shadow-2xl space-y-5 relative overflow-hidden">
-              {/* Header */}
-              <div className="flex items-center justify-between border-b border-white/[0.06] pb-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                    <TreePine size={18} />
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-white font-mono">Carbon Dashboard</h4>
-                    <p className="text-[10px] text-zinc-500 font-mono">Live Simulation Widget</p>
-                  </div>
-                </div>
-                <span className="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
-                  ONLINE
-                </span>
+          {/* Right Column: Visual Preview */}
+          {project.image && (
+            <div className="w-full lg:w-[420px] shrink-0">
+              <div className="relative w-full h-72 sm:h-96 rounded-3xl overflow-hidden border border-white/10 bg-[#0A0A0B] shadow-2xl">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  className="object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F0E0E] via-transparent to-transparent opacity-50" />
               </div>
-
-              {/* Metric previews */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                  <span className="text-[10px] font-mono text-zinc-500 block">EST. EMISSION</span>
-                  <span className="text-lg font-mono font-bold text-white mt-1 block">
-                    3.84 <span className="text-xs text-zinc-400 font-normal">Tons CO₂</span>
-                  </span>
-                </div>
-                <div className="p-3.5 rounded-xl bg-emerald-500/[0.04] border border-emerald-500/20">
-                  <span className="text-[10px] font-mono text-emerald-400 block">TREES REQUIRED</span>
-                  <span className="text-lg font-mono font-bold text-emerald-300 mt-1 block">
-                    18 <span className="text-xs text-emerald-400/70 font-normal">Saplings</span>
-                  </span>
-                </div>
-              </div>
-
-              {/* Progress bar */}
-              <div className="p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06] space-y-2">
-                <div className="flex justify-between text-[11px] font-mono text-zinc-400">
-                  <span>Carbon Offset Trajectory</span>
-                  <span className="text-emerald-400 font-bold">100% Target</span>
-                </div>
-                <div className="h-2 w-full bg-white/[0.05] rounded-full overflow-hidden">
-                  <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 w-4/5 rounded-full" />
-                </div>
-              </div>
-
-              {/* Verification bullets */}
-              <div className="space-y-2 pt-2 text-[11px] font-mono text-zinc-400 border-t border-white/[0.06]">
-                <div className="flex items-center justify-between">
-                  <span>Deployment:</span>
-                  <span className="text-white">Render Cloud</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Hackathon:</span>
-                  <span className="text-white">Eclearnix KPR</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>Architecture:</span>
-                  <span className="text-white">Client-Side Analytics</span>
-                </div>
-              </div>
-
-              {/* Action Banner */}
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center py-2.5 px-4 rounded-xl bg-white/[0.04] hover:bg-emerald-500/20 text-emerald-300 border border-white/10 hover:border-emerald-500/40 text-xs font-mono font-medium transition-colors"
-              >
-                Open Live Application ↗
-              </a>
             </div>
-          </div>
+          )}
         </div>
       </motion.div>
     </div>

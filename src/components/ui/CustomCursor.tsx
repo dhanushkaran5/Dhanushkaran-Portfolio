@@ -14,7 +14,6 @@ export default function CustomCursor() {
   const cursorY = useSpring(-100, springConfig);
 
   useEffect(() => {
-    // Disable on touch devices or reduced motion
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -74,13 +73,13 @@ export default function CustomCursor() {
           translateY: '-50%',
         }}
         animate={{
-          scale: isHovered ? (cursorText ? 2.6 : 1.7) : 1,
+          scale: isHovered ? (cursorText ? 2.5 : 1.6) : 1,
           opacity: 1,
         }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.18 }}
         className={`fixed pointer-events-none flex items-center justify-center rounded-full border transition-colors duration-150 ${
           isHovered
-            ? 'border-emerald-400/80 bg-emerald-500/10 backdrop-blur-[2px]'
+            ? 'border-white/50 bg-white/[0.08] backdrop-blur-[2px]'
             : 'border-white/20 bg-white/[0.02]'
         }`}
       >
@@ -94,7 +93,7 @@ export default function CustomCursor() {
           }`}
         >
           {cursorText && (
-            <span className="text-[9px] font-mono font-semibold uppercase tracking-wider text-emerald-300 pointer-events-none">
+            <span className="text-[9px] font-mono font-semibold uppercase tracking-wider text-white pointer-events-none">
               {cursorText}
             </span>
           )}
@@ -113,7 +112,7 @@ export default function CustomCursor() {
           scale: isHovered ? 0.4 : 1,
           opacity: cursorText ? 0 : 1,
         }}
-        className="fixed pointer-events-none h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"
+        className="fixed pointer-events-none h-1.5 w-1.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)]"
       />
     </div>
   );

@@ -1,166 +1,207 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import {
   Briefcase,
+  TrendingUp,
   GraduationCap,
-  Award,
-  Sparkles,
+  ShieldCheck,
   CheckCircle2,
-  BookOpen,
+  Calendar,
+  MapPin,
 } from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/data/portfolioData';
-
-const TYPE_ICONS = {
-  education: GraduationCap,
-  internship: Briefcase,
-  achievement: Award,
-  patent: Award,
-};
+import { WORK_EXPERIENCE_DATA, TIMELINE_DATA } from '@/data/portfolioData';
 
 export default function ExperienceTimeline() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end center'],
+  });
+
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
-    <section id="journey" className="relative py-28 px-4 sm:px-6 lg:px-8 border-t border-white/[0.06]">
-      <div className="max-w-5xl mx-auto">
+    <section
+      id="experience"
+      className="relative py-24 sm:py-32 bg-[#0F0E0E] overflow-hidden z-20"
+      aria-label="Professional Experience &amp; Engineering Milestones"
+    >
+      <div id="my-journey" className="absolute -top-10" />
+
+      {/* Ambient background glow */}
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#ff6b3d]/5 blur-[180px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8">
         {/* Section Header */}
-        <div className="mb-20 text-center">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-emerald-400 mb-3"
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-zinc-300 mb-6 shadow-[0_0_15px_rgba(255,255,255,0.04)]"
           >
-            <Sparkles size={12} />
-            <span>EXPERIENCE &amp; MILESTONES</span>
+            <Briefcase className="w-3.5 h-3.5 text-[#ff6b3d]" />
+            <span className="tracking-widest uppercase font-medium">INDUSTRY EXPERIENCE</span>
           </motion.div>
+
           <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-[-0.02em] leading-[1.0] text-white"
+            style={{ fontFamily: 'var(--font-jakarta), sans-serif' }}
+          >
+            Work{' '}
+            <span className="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
+              Experience
+            </span>
+          </motion.h2>
+
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-4 text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-lg mx-auto"
           >
-            Academic &amp; Professional Journey
-          </motion.h2>
-          <p className="text-sm sm:text-base text-zinc-400 mt-2 max-w-xl mx-auto">
-            A chronological progression of research, enterprise internships, hackathons, and certifications.
-          </p>
+            Factual software engineering and data science internships verified against official records.
+          </motion.p>
         </div>
 
-        {/* Vertical Timeline */}
-        <div className="relative">
-          {/* Vertical central line (desktop) / left line (mobile) */}
-          <div className="absolute left-4 sm:left-1/2 top-4 bottom-4 w-[1px] bg-gradient-to-b from-emerald-500/50 via-white/10 to-transparent -translate-x-1/2" />
+        {/* Vertical Animated Timeline Container */}
+        <div ref={containerRef} className="relative max-w-4xl mx-auto">
+          {/* Static Background Track */}
+          <div className="absolute left-4 md:left-1/2 top-4 bottom-4 w-[2px] bg-white/[0.08] md:-translate-x-1/2 pointer-events-none" />
 
-          <div className="space-y-12">
-            {PORTFOLIO_DATA.journey.map((item, idx) => {
-              const isEven = idx % 2 === 0;
-              const Icon = TYPE_ICONS[item.type] || Briefcase;
+          {/* Progressive Animated Line */}
+          <motion.div
+            style={{ scaleY }}
+            className="absolute left-4 md:left-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-[#ff6b3d] via-[#ff8e66] to-white/20 origin-top md:-translate-x-1/2 pointer-events-none z-0"
+          />
+
+          <div className="space-y-12 md:space-y-16">
+            {WORK_EXPERIENCE_DATA.map((item, index) => {
+              const isEven = index % 2 === 0;
 
               return (
                 <div
-                  key={idx}
-                  className={`relative flex flex-col sm:flex-row items-start ${
-                    isEven ? 'sm:flex-row-reverse' : ''
+                  key={item.id}
+                  className={`relative flex flex-col md:flex-row items-start ${
+                    isEven ? 'md:flex-row-reverse' : ''
                   }`}
                 >
-                  {/* Center Node Dot */}
-                  <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 top-6 w-8 h-8 rounded-full bg-[#08080A] border-2 border-emerald-500 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.5)] z-10">
-                    <Icon size={14} />
-                  </div>
-
-                  {/* Content Card */}
+                  {/* Timeline Center Node Badge */}
                   <motion.div
-                    initial={{ opacity: 0, x: isEven ? 30 : -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ scale: 0.6, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                    className={`ml-12 sm:ml-0 w-full sm:w-[45%] ${
-                      isEven ? 'sm:pl-10' : 'sm:pr-10'
+                    transition={{ duration: 0.4, delay: 0.1 }}
+                    className="absolute left-4 md:left-1/2 -translate-x-1/2 top-0 w-10 h-10 rounded-full bg-[#141313] border-2 border-[#ff6b3d] flex items-center justify-center text-white shadow-[0_0_20px_rgba(255,107,61,0.3)] z-10"
+                  >
+                    {item.id === 'litz-technologies' ? (
+                      <Briefcase className="w-4 h-4 text-[#ff8e66]" />
+                    ) : (
+                      <TrendingUp className="w-4 h-4 text-[#ff8e66]" />
+                    )}
+                  </motion.div>
+
+                  {/* Milestone Card */}
+                  <motion.div
+                    initial={{ opacity: 0, x: isEven ? 40 : -40, y: 20 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.15 }}
+                    className={`ml-12 md:ml-0 w-full md:w-[46%] ${
+                      isEven ? 'md:pl-8' : 'md:pr-8'
                     }`}
                   >
-                    <div className="p-6 sm:p-7 rounded-3xl border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.035] hover:border-emerald-500/30 transition-all duration-300 relative group shadow-lg">
-                      {/* Period Badge & Category */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="text-xs font-mono font-semibold px-2.5 py-0.5 rounded-full bg-white/[0.04] text-emerald-300 border border-white/[0.08]">
+                    <div className="p-6 sm:p-8 rounded-3xl bg-[#131214]/90 backdrop-blur-xl border border-white/10 hover:border-white/25 transition-all duration-300 relative group shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
+                      {/* Top Date & Role Badge */}
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-[#ff6b3d]/10 text-[#ff8e66] border border-[#ff6b3d]/25">
                           {item.period}
                         </span>
-                        {item.badge && (
-                          <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400">
-                            {item.badge}
-                          </span>
-                        )}
+                        <span className="text-xs font-mono text-zinc-400 font-medium flex items-center gap-1">
+                          <MapPin className="w-3 h-3 text-zinc-500" />
+                          <span>{item.location}</span>
+                        </span>
                       </div>
 
-                      {/* Title & Organization */}
-                      <h3 className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">
-                        {item.title}
+                      {/* Company Name & Role Title */}
+                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-1">
+                        {item.company}
                       </h3>
-
-                      <p className="text-xs font-mono text-zinc-400 mt-1 mb-4">
-                        {item.organization}
+                      <p className="text-xs font-mono text-zinc-300 font-medium mb-4">
+                        {item.role}
                       </p>
 
-                      {/* Highlight callout if present */}
-                      {item.highlight && (
-                        <div className="mb-4 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-300">
-                          {item.highlight}
-                        </div>
-                      )}
+                      {/* Description */}
+                      <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed mb-5">
+                        {item.description}
+                      </p>
 
-                      {/* Description Bullet points */}
-                      <ul className="space-y-2">
-                        {item.description.map((bullet, bIdx) => (
-                          <li
-                            key={bIdx}
-                            className="flex items-start gap-2 text-xs text-zinc-300 leading-relaxed"
-                          >
-                            <CheckCircle2 size={13} className="text-emerald-400 mt-0.5 shrink-0" />
+                      {/* Factual Bullet Points from Resume */}
+                      <div className="space-y-2.5 mb-6">
+                        {item.bullets.map((bullet, i) => (
+                          <div key={i} className="flex items-start gap-2.5 text-xs text-zinc-300 leading-relaxed font-sans">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#ff6b3d] shrink-0 mt-0.5" />
                             <span>{bullet}</span>
-                          </li>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
+
+                      {/* Technologies Pills */}
+                      <div className="pt-4 border-t border-white/[0.08] flex flex-wrap gap-1.5">
+                        {item.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2.5 py-1 rounded-lg bg-white/[0.04] border border-white/[0.06] text-[11px] font-mono text-zinc-300"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </motion.div>
                 </div>
               );
             })}
           </div>
-        </div>
 
-        {/* Certifications Grid */}
-        <div className="mt-28">
-          <div className="text-center mb-10">
-            <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest block mb-1">
-              CREDENTIALS
+          {/* Academic Foundation & Patent Milestones Footnote */}
+          <div className="mt-16 pt-8 border-t border-white/10 text-center">
+            <span className="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-4">
+              RELATED ACADEMIC &amp; RESEARCH MILESTONES
             </span>
-            <h3 className="text-2xl font-bold text-white">Verified Certifications</h3>
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-left">
+                <div className="flex items-center gap-2 mb-1.5 text-white font-bold text-sm">
+                  <GraduationCap className="w-4 h-4 text-[#ff8e66]" />
+                  <span>B.Tech AI &amp; Data Science</span>
+                </div>
+                <p className="text-xs font-mono text-zinc-400">
+                  V.S.B College of Engineering (2023 – 2027) • CGPA 8.10
+                </p>
+              </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {PORTFOLIO_DATA.certifications.map((cert, idx) => (
-              <motion.div
-                key={cert.title}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.06 }}
-                className="p-5 rounded-2xl border border-white/[0.07] bg-white/[0.02] flex items-start gap-3.5 hover:border-white/20 transition-colors"
-              >
-                <div className="w-9 h-9 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-emerald-400 shrink-0">
-                  <BookOpen size={16} />
+              <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-left">
+                <div className="flex items-center gap-2 mb-1.5 text-white font-bold text-sm">
+                  <ShieldCheck className="w-4 h-4 text-[#ff8e66]" />
+                  <span>Govt. Indian Patent</span>
                 </div>
-                <div>
-                  <span className="text-[10px] font-mono text-emerald-400 font-bold uppercase block mb-0.5">
-                    {cert.provider}
-                  </span>
-                  <h4 className="text-xs font-semibold text-white leading-snug">
-                    {cert.title}
-                  </h4>
-                </div>
-              </motion.div>
-            ))}
+                <p className="text-xs font-mono text-zinc-400">
+                  App No. 202541099319 A (Nov 2025) • Smart Traffic
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

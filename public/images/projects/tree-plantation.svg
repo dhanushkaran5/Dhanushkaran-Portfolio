@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ecoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081c15"/>
+      <stop offset="50%" stop-color="#0d2b20"/>
+      <stop offset="100%" stop-color="#05150e"/>
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52b788"/>
+      <stop offset="100%" stop-color="#2d6a4f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="24" fill="url(#ecoBg)"/>
+  <circle cx="400" cy="250" r="260" fill="#1b4332" opacity="0.25"/>
+
+  <!-- Grid lines -->
+  <g stroke="rgba(255,255,255,0.04)" stroke-width="1">
+    <line x1="50" y1="100" x2="750" y2="100"/>
+    <line x1="50" y1="200" x2="750" y2="200"/>
+    <line x1="50" y1="300" x2="750" y2="300"/>
+    <line x1="50" y1="400" x2="750" y2="400"/>
+  </g>
+
+  <!-- Top bar UI -->
+  <rect x="50" y="40" width="700" height="48" rx="12" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="75" cy="64" r="6" fill="#ef4444" opacity="0.7"/>
+  <circle cx="95" cy="64" r="6" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="115" cy="64" r="6" fill="#10b981" opacity="0.7"/>
+  <text x="145" y=\"69\" fill="#74c69d" font-family="monospace" font-size="13" font-weight="600" letter-spacing="1">CARBON FOOTPRINT ESTIMATOR &amp; OFFSET ENGINE</text>
+
+  <!-- Metric Card 1 -->
+  <rect x="50" y="110" width="215" height="120" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+  <text x="75" y="142" fill="#95d5b2" font-family="sans-serif" font-size="12" font-weight="500">ANNUAL CO₂ SIMULATED</text>
+  <text x="75" y="182" fill="#ffffff" font-family="sans-serif" font-size="32" font-weight="800">2.84 Tons</text>
+  <path d="M 75,205 L 140,195 L 200,210 L 240,190" fill="none" stroke="#52b788" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Metric Card 2 -->
+  <rect x="290" y="110" width="220" height="120" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(82,183,136,0.3)"/>
+  <text x="315" y="142" fill="#95d5b2" font-family="sans-serif" font-size="12" font-weight="500">RECOMMENDED TREES</text>
+  <text x="315" y="182" fill="#52b788" font-family="sans-serif" font-size="34" font-weight="800">142 Saplings</text>
+  <text x="315" y="212" fill="#74c69d" font-family="monospace" font-size="11">100% OFFSETS ACHIEVED</text>
+
+  <!-- Metric Card 3 -->
+  <rect x="535" y="110" width="215" height="120" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+  <text x="560" y="142" fill="#95d5b2" font-family="sans-serif" font-size="12" font-weight="500">CALCULATION SPEED</text>
+  <text x="560" y="182" fill="#ffffff" font-family="sans-serif" font-size="32" font-weight="800">&lt; 5 ms</text>
+  <text x="560" y="212" fill="#74c69d" font-family="monospace" font-size="11">CLIENT-SIDE LOGIC</text>
+
+  <!-- Large Graph Card -->
+  <rect x="50" y="250" width="700" height="200" rx="18" fill="rgba(20,45,35,0.4)" stroke="rgba(82,183,136,0.2)"/>
+  <path d="M 80,410 C 180,390 240,310 350,330 C 460,350 540,280 720,300 L 720,420 L 80,420 Z" fill="url(#leafGrad)" opacity="0.15"/>
+  <path d="M 80,410 C 180,390 240,310 350,330 C 460,350 540,280 720,300" fill="none" stroke="#52b788" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="350" cy="330" r="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="3"/>
+  <circle cx="540" cy="280" r="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="80" y="285" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="700">Offset Telemetry vs Consumption Breakdown</text>
+  <text x="80" y="305" fill="#95d5b2" font-family="monospace" font-size="11">Real-Time Mathematics verified with Environmental Factor Equations</text>
+</svg>

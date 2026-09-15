@@ -53,7 +53,7 @@ export default function StatsCounter() {
   return (
     <section className="relative py-12 px-4 sm:px-6 lg:px-8 border-y border-white/[0.06] bg-[#08080A]/60 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {PORTFOLIO_DATA.stats.map((stat, idx) => (
             <motion.div
               key={stat.label}

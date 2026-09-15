@@ -1,29 +1,29 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Home,
-  User,
-  Code2,
-  Briefcase,
-  Layers,
-  Mail,
   Menu,
   X,
   FileText,
-  ExternalLink,
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Instagram,
+  Sparkles,
 } from 'lucide-react';
+import MagneticButton from '@/components/ui/MagneticButton';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
 
-const NAV_ITEMS = [
-  { name: 'Home', href: '#hero', icon: Home },
-  { name: 'About', href: '#about', icon: User },
-  { name: 'Projects', href: '#projects', icon: Briefcase },
-  { name: 'Skills', href: '#skills', icon: Code2 },
-  { name: 'Services', href: '#services', icon: Layers },
-  { name: 'Journey', href: '#journey', icon: FileText },
-  { name: 'Contact', href: '#contact', icon: Mail },
+const NAV_LINKS = [
+  { label: 'About', href: '#about', id: 'about' },
+  { label: 'Experience', href: '#experience', id: 'experience' },
+  { label: 'Projects', href: '#work', id: 'work' },
+  { label: 'Skills', href: '#skills', id: 'skills' },
+  { label: 'Credentials', href: '#certifications', id: 'certifications' },
+  { label: 'Contact', href: '#contact', id: 'contact' },
 ];
 
 export default function Navbar() {
@@ -35,9 +35,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      // Active section detection
-      const sections = ['hero', 'about', 'projects', 'skills', 'services', 'journey', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      const sections = ['hero', 'about', 'experience', 'my-journey', 'work', 'skills', 'certifications', 'contact'];
+      const scrollPosition = window.scrollY + 280;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -45,7 +44,7 @@ export default function Navbar() {
           const top = el.offsetTop;
           const height = el.offsetHeight;
           if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(sectionId);
+            setActiveSection(sectionId === 'my-journey' ? 'experience' : sectionId);
             break;
           }
         }
@@ -53,203 +52,194 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setMobileMenuOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      setMobileMenuOpen(false);
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
   return (
     <>
-      {/* Desktop Floating Navigation */}
-      <header className="fixed top-5 left-0 right-0 z-40 hidden md:flex justify-center px-4 pointer-events-none">
-        <motion.div
-          initial={{ y: -40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-auto relative group"
-        >
-          {/* Animated Conic Border Ring */}
-          <div className="absolute -inset-[1px] rounded-full overflow-hidden pointer-events-none">
-            <div
-              className="absolute inset-[-100%] animate-border-spin opacity-40 group-hover:opacity-80 transition-opacity duration-500"
-              style={{
-                background:
-                  'conic-gradient(from 0deg, rgba(255,255,255,0.8), rgba(16,185,129,0.7) 25%, rgba(255,255,255,0.05) 50%, rgba(16,185,129,0.7) 75%, rgba(255,255,255,0.8))',
-              }}
-            />
-          </div>
-
-          {/* Main Glass Pill Container */}
-          <nav
-            className={`relative flex items-center gap-1 px-3 py-1.5 rounded-full border transition-all duration-300 ${
-              scrolled
-                ? 'bg-[#08080A]/85 backdrop-blur-xl border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.6)]'
-                : 'bg-[#08080A]/60 backdrop-blur-md border-white/[0.08] shadow-[0_4px_24px_rgba(0,0,0,0.4)]'
-            }`}
+      {/* Desktop Fixed Header Container */}
+      <header className="fixed top-0 inset-x-0 z-50 pointer-events-none transition-all duration-300 py-4 sm:py-5 px-4 sm:px-6 md:px-8 lg:px-10">
+        <div className="max-w-[1360px] mx-auto flex items-center justify-between">
+          {/* Brand Logo with Avatar (Pointer Events Auto) */}
+          <motion.div
+            initial={{ opacity: 0, x: -25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="pointer-events-auto"
           >
-            {/* Logo / Monogram */}
-            <a
-              href="#hero"
-              onClick={(e) => scrollToSection(e, '#hero')}
-              className="flex items-center gap-2 pl-2 pr-3 py-1 text-xs font-mono font-bold tracking-tight text-white hover:text-emerald-400 transition-colors"
-              aria-label="Home"
+            <Link
+              href="/#hero"
+              className="group flex items-center gap-3 px-3 py-1.5 rounded-full bg-[#131214]/80 hover:bg-[#181719] backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all shadow-[0_8px_30px_rgba(0,0,0,0.5)] cursor-pointer"
+              aria-label="Dhanushkaran M - Back to top"
             >
-              <div className="w-6 h-6 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-[10px] text-emerald-400">
-                DM
+              <div className="relative w-7 h-7 rounded-full overflow-hidden border border-white/20 group-hover:scale-105 transition-transform shrink-0">
+                <Image
+                  src="/portrait.jpg"
+                  alt="Dhanushkaran M Avatar"
+                  fill
+                  sizes="28px"
+                  priority
+                  className="object-cover object-top"
+                />
               </div>
-              <span className="hidden lg:inline text-zinc-300">dhanush.dev</span>
-            </a>
-
-            <div className="h-4 w-[1px] bg-white/10 mr-1" />
-
-            {/* Nav links */}
-            <div className="flex items-center gap-0.5">
-              {NAV_ITEMS.map((item) => {
-                const isActive = activeSection === item.href.substring(1);
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => scrollToSection(e, item.href)}
-                    className={`relative px-3.5 py-1.5 text-xs font-medium rounded-full flex items-center gap-1.5 transition-all duration-200 ${
-                      isActive
-                        ? 'text-white'
-                        : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
-                    }`}
-                  >
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeNavIndicator"
-                        className="absolute inset-0 rounded-full bg-white/[0.08] border border-white/15"
-                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                      />
-                    )}
-                    <Icon size={13} className={isActive ? 'text-emerald-400' : 'opacity-70'} />
-                    <span className="relative z-10">{item.name}</span>
-                  </a>
-                );
-              })}
-            </div>
-
-            <div className="h-4 w-[1px] bg-white/10 mx-1" />
-
-            {/* Availability Dot & Resume */}
-            <div className="flex items-center gap-2 pr-1">
-              <div className="flex items-center gap-1.5 pl-2 pr-2 text-[11px] font-mono text-zinc-300">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              <div className="flex flex-col">
+                <span className="text-xs font-bold text-white tracking-tight leading-none group-hover:text-[#ff8e66] transition-colors">
+                  Dhanushkaran M
                 </span>
-                <span className="hidden xl:inline text-zinc-400 text-[10px]">Available</span>
+                <span className="text-[9px] font-mono text-zinc-400 tracking-wider">
+                  AI &amp; DS Engineer
+                </span>
               </div>
+            </Link>
+          </motion.div>
 
-              <a
-                href={PORTFOLIO_DATA.personal.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[11px] font-mono px-3 py-1 rounded-full bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-300 border border-emerald-500/30 flex items-center gap-1 transition-colors"
-              >
-                <span>CV</span>
-                <ExternalLink size={10} />
-              </a>
-            </div>
-          </nav>
-        </motion.div>
-      </header>
-
-      {/* Mobile Top Bar */}
-      <header className="fixed top-4 left-0 right-0 z-40 px-4 md:hidden">
-        <div className="relative flex items-center justify-between px-4 py-2.5 rounded-full bg-[#08080A]/85 backdrop-blur-xl border border-white/10 shadow-lg">
-          <a
-            href="#hero"
-            onClick={(e) => scrollToSection(e, '#hero')}
-            className="flex items-center gap-2"
+          {/* Desktop Compact Floating Glass Navigation Panel */}
+          <motion.nav
+            initial={{ opacity: 0, y: -25, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-[#131214]/85 backdrop-blur-2xl border border-white/10 shadow-[0_12px_40px_rgba(0,0,0,0.6)] pointer-events-auto transition-all duration-300"
           >
-            <div className="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-xs font-mono font-bold text-emerald-400">
-              DM
-            </div>
-            <span className="text-xs font-mono font-semibold text-white tracking-wider">
-              DHANUSHKARAN M
-            </span>
-          </a>
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.id;
+              return (
+                <a
+                  key={link.id}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className={`relative px-3.5 py-1.5 text-xs font-mono transition-colors duration-200 cursor-pointer ${
+                    isActive ? 'text-white font-semibold' : 'text-zinc-400 hover:text-white'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNavPill"
+                      className="absolute inset-0 rounded-full bg-white/10 border border-white/15 shadow-[0_0_12px_rgba(255,255,255,0.1)]"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </a>
+              );
+            })}
+          </motion.nav>
 
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
+          {/* Right Action: Magnetic Resume CTA (Desktop) */}
+          <motion.div
+            initial={{ opacity: 0, x: 25 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            className="hidden md:flex items-center gap-3 pointer-events-auto"
+          >
+            <MagneticButton href="/resume" ariaLabel="View Resume">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white text-black hover:bg-zinc-200 text-xs font-mono font-semibold tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                <FileText className="w-3.5 h-3.5" />
+                <span>Resume</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </span>
+            </MagneticButton>
+          </motion.div>
 
+          {/* Mobile Menu Toggle Button */}
+          <div className="flex md:hidden pointer-events-auto">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-1.5 rounded-full text-zinc-300 hover:text-white hover:bg-white/[0.06] transition-colors"
-              aria-label="Toggle Navigation Menu"
+              className="w-10 h-10 rounded-full bg-[#131214]/85 border border-white/10 text-white flex items-center justify-center backdrop-blur-xl shadow-lg cursor-pointer"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Mobile Animated Drawer Menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -10, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.98 }}
-              transition={{ duration: 0.2 }}
-              className="mt-2 p-4 rounded-2xl bg-[#0D0D12]/95 backdrop-blur-2xl border border-white/10 shadow-2xl space-y-1"
-            >
-              {NAV_ITEMS.map((item) => {
-                const isActive = activeSection === item.href.substring(1);
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={(e) => scrollToSection(e, item.href)}
-                    className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20'
-                        : 'text-zinc-300 hover:text-white hover:bg-white/[0.04]'
-                    }`}
+      {/* Mobile Fullscreen Glass Overlay Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            animate={{ opacity: 1, backdropFilter: 'blur(24px)' }}
+            exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-[#0B0B0C]/95 md:hidden flex flex-col justify-between p-6 pt-24"
+          >
+            <div className="space-y-4">
+              <span className="text-[10px] font-mono tracking-[0.2em] text-[#ff8e66] uppercase block mb-4">
+                NAVIGATION
+              </span>
+              <div className="flex flex-col space-y-3">
+                {NAV_LINKS.map((link, idx) => (
+                  <motion.a
+                    key={link.id}
+                    href={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 + idx * 0.05 }}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="text-2xl font-bold text-white hover:text-[#ff8e66] tracking-tight transition-colors py-1 flex items-center justify-between border-b border-white/[0.05]"
                   >
-                    <Icon size={16} />
-                    <span>{item.name}</span>
-                  </a>
-                );
-              })}
+                    <span>{link.label}</span>
+                    <ArrowUpRight className="w-4 h-4 text-zinc-500" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
 
-              <div className="pt-2 mt-2 border-t border-white/10 flex gap-2">
-                <a
-                  href={PORTFOLIO_DATA.personal.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 text-center py-2 px-3 rounded-xl bg-emerald-500 text-black font-medium text-xs flex items-center justify-center gap-1.5"
-                >
-                  <FileText size={13} />
-                  <span>Resume (PDF)</span>
-                </a>
+            <div className="space-y-4 pt-6 border-t border-white/10">
+              <Link
+                href="/resume"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-3.5 rounded-2xl bg-white text-black font-semibold text-center font-mono text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-lg"
+              >
+                <FileText className="w-4 h-4" />
+                <span>View Full Resume</span>
+              </Link>
+
+              <div className="flex items-center justify-center gap-6 pt-2 text-zinc-400">
                 <a
                   href={PORTFOLIO_DATA.personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-xl bg-white/[0.06] text-white border border-white/10 flex items-center justify-center"
+                  className="hover:text-white transition-colors"
+                  aria-label="GitHub"
                 >
-                  <ExternalLink size={16} />
+                  <Github className="w-5 h-5" />
+                </a>
+                <a
+                  href={PORTFOLIO_DATA.personal.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a
+                  href={PORTFOLIO_DATA.personal.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
                 </a>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </header>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

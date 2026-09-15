@@ -17,9 +17,9 @@ export default function HeroBackground() {
     let height = (canvas.height = window.innerHeight);
 
     const isMobile = window.innerWidth < 768;
-    const count = isMobile ? 25 : 55;
+    const count = isMobile ? 30 : 65;
 
-    // Particle nodes
+    // Subtle star / ambient dust particles
     const particles: {
       x: number;
       y: number;
@@ -32,68 +32,24 @@ export default function HeroBackground() {
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        radius: Math.random() * 1.5 + 0.8,
+        y: Math.random() * height * 0.85,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        radius: Math.random() * 1.2 + 0.5,
         alpha: Math.random() * 0.4 + 0.1,
       });
     }
-
-    let mouse = { x: -1000, y: -1000, active: false };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-      mouse.active = true;
-    };
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
 
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('resize', handleResize);
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw subtle grid lines
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.015)';
-      ctx.lineWidth = 1;
-      const gridSize = 60;
-      for (let x = 0; x < width; x += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-      }
-      for (let y = 0; y < height; y += gridSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-
-      // Cursor ambient light glow
-      if (mouse.active && !isMobile) {
-        const gradient = ctx.createRadialGradient(
-          mouse.x,
-          mouse.y,
-          0,
-          mouse.x,
-          mouse.y,
-          350
-        );
-        gradient.addColorStop(0, 'rgba(16, 185, 129, 0.08)');
-        gradient.addColorStop(0.5, 'rgba(16, 185, 129, 0.02)');
-        gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
-        ctx.fillStyle = gradient;
-        ctx.fillRect(0, 0, width, height);
-      }
-
-      // Draw and connect particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
@@ -101,30 +57,13 @@ export default function HeroBackground() {
 
         if (p.x < 0) p.x = width;
         if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
+        if (p.y < 0) p.y = height * 0.85;
+        if (p.y > height * 0.85) p.y = 0;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(16, 185, 129, ${p.alpha})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
         ctx.fill();
-
-        // Connect nearby particles
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 110) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.05 * (1 - dist / 110)})`;
-            ctx.stroke();
-          }
-        }
       }
 
       animationId = requestAnimationFrame(render);
@@ -134,17 +73,99 @@ export default function HeroBackground() {
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
-      {/* Top ambient radial gradient */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] bg-emerald-500/10 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-white/[0.02] blur-[100px] rounded-full pointer-events-none" />
+    <div className="absolute inset-0 w-full h-full pointer-events-none select-none z-0">
+      {/* Particle stars canvas */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-[11] pointer-events-none w-full h-full" />
+
+      {/* Horizon Arc SVG Sunset/Sunrise Radiant Glow */}
+      <div className="absolute bottom-[-24px] sm:bottom-[-36px] left-0 w-full h-[380px] sm:h-[500px] z-[13] pointer-events-none overflow-visible">
+        <div className="relative w-full h-full">
+          <svg
+            className="absolute bottom-0 inset-x-0 w-full h-full z-10"
+            viewBox="0 0 1200 600"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <defs>
+              <radialGradient id="skyGlow" cx="50%" cy="77%" r="42%">
+                <stop offset="0%" stopColor="#d35400" stopOpacity="0.95" />
+                <stop offset="15%" stopColor="#b23b00" stopOpacity="0.75" />
+                <stop offset="35%" stopColor="#802000" stopOpacity="0.45" />
+                <stop offset="60%" stopColor="#3b0800" stopOpacity="0.15" />
+                <stop offset="85%" stopColor="#120100" stopOpacity="0.02" />
+                <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              </radialGradient>
+              <radialGradient id="coreGlow" cx="50%" cy="77%" r="14%">
+                <stop offset="0%" stopColor="#ff9100" stopOpacity="1" />
+                <stop offset="20%" stopColor="#d35400" stopOpacity="0.9" />
+                <stop offset="55%" stopColor="#802000" stopOpacity="0.35" />
+                <stop offset="100%" stopColor="#3b0800" stopOpacity="0" />
+              </radialGradient>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#ff3c00" stopOpacity="0" />
+                <stop offset="25%" stopColor="#ff5500" stopOpacity="0.6" />
+                <stop offset="45%" stopColor="#ffb088" stopOpacity="0.9" />
+                <stop offset="50%" stopColor="#ffffff" stopOpacity="1" />
+                <stop offset="55%" stopColor="#ffb088" stopOpacity="0.9" />
+                <stop offset="75%" stopColor="#ff5500" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#ff3c00" stopOpacity="0" />
+              </linearGradient>
+              <filter id="softBlur" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" />
+              </filter>
+              <filter id="lineBlur" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="0.8" />
+              </filter>
+              <clipPath id="skyClip">
+                <path d="M 0 560 Q 600 360, 1200 560 L 1200 0 L 0 0 Z" />
+              </clipPath>
+            </defs>
+
+            <g clipPath="url(#skyClip)">
+              <rect x="0" y="0" width="1200" height="600" fill="url(#skyGlow)" />
+              <rect x="0" y="0" width="1200" height="600" fill="url(#coreGlow)" />
+            </g>
+
+            <path
+              d="M 0 560 Q 600 360, 1200 560"
+              fill="none"
+              stroke="url(#lineGrad)"
+              strokeWidth="20"
+              strokeLinecap="round"
+              filter="url(#softBlur)"
+              opacity="0.35"
+            />
+            <path
+              d="M 0 560 Q 600 360, 1200 560"
+              fill="none"
+              stroke="url(#lineGrad)"
+              strokeWidth="5"
+              strokeLinecap="round"
+              filter="url(#lineBlur)"
+            />
+            <path
+              d="M 70 560 Q 600 425, 1130 560"
+              fill="none"
+              stroke="url(#lineGrad)"
+              strokeWidth="2.4"
+              strokeLinecap="round"
+              filter="url(#lineBlur)"
+              opacity="0.25"
+            />
+          </svg>
+        </div>
+      </div>
+
+      {/* Emerging Celestial Orb Sphere */}
+      <div className="absolute bottom-[-100px] sm:bottom-[-160px] left-1/2 -translate-x-1/2 w-64 sm:w-96 aspect-square rounded-full z-[12] pointer-events-none opacity-80 overflow-visible">
+        <div className="w-full h-full rounded-full bg-gradient-to-b from-white via-zinc-200 to-zinc-600 shadow-[0_0_80px_rgba(255,255,255,0.4)]" />
+      </div>
     </div>
   );
 }

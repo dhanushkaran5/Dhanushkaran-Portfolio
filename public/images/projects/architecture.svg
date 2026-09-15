@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#0b0e14"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="24" fill="url(#archBg)"/>
+  
+  <!-- Topology Grid -->
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <line x1="100" y1="50" x2="100" y2="450"/>
+    <line x1="250" y1="50" x2="250" y2="450"/>
+    <line x1="400" y1="50" x2="400" y2="450"/>
+    <line x1="550" y1="50" x2="550" y2="450"/>
+    <line x1="700" y1="50" x2="700" y2="450"/>
+  </g>
+
+  <!-- Top Title -->
+  <rect x="50" y="35" width="700" height="45" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+  <text x="75" y="63" fill="#58a6ff" font-family="monospace" font-size="13" font-weight="bold">1ST PRIZE TECH ARCHITECTURE // FAULT-TOLERANT DISTRIBUTED ENGINE</text>
+
+  <!-- Node 1: Ingress / Gateway -->
+  <rect x="80" y="140" width="180" height="180" rx="16" fill="#1c2128" stroke="#388bfd" stroke-width="1.5"/>
+  <text x="100" y="175" fill="#58a6ff" font-family="sans-serif" font-size="14" font-weight="bold">API Gateway</text>
+  <text x="100" y="198" fill="#8b949e" font-family="monospace" font-size="11">Reverse Proxy</text>
+  <text x="100" y="225" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Rate Limiting</text>
+  <text x="100" y="248" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Token Validation</text>
+  <text x="100" y="271" fill="#3fb950" font-family="monospace" font-size="11">LATENCY: &lt; 2ms</text>
+
+  <!-- Arrow 1 to 2 -->
+  <path d="M 260,230 L 310,230" stroke="#388bfd" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Node 2: Message Broker & Queue -->
+  <rect x="310" y="120" width="180" height="220" rx="16" fill="#1c2128" stroke="#f0883e" stroke-width="1.5"/>
+  <text x="330" y="155" fill="#f0883e" font-family="sans-serif" font-size="14" font-weight="bold">Event Stream</text>
+  <text x="330" y="178" fill="#8b949e" font-family="monospace" font-size="11">Asynchronous Worker</text>
+  <text x="330" y="205" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Task Buffers</text>
+  <text x="330" y="228" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Auto-Failover</text>
+  <text x="330" y="251" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Resilient Retries</text>
+  <text x="330" y="295" fill="#3fb950" font-family="monospace" font-size="11">ZERO DEADLOCKS</text>
+
+  <!-- Arrow 2 to 3 -->
+  <path d="M 490,230 L 540,230" stroke="#f0883e" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- Node 3: Persistence / Pool -->
+  <rect x="540" y="140" width="180" height="180" rx="16" fill="#1c2128" stroke="#a371f7" stroke-width="1.5"/>
+  <text x="560" y="175" fill="#a371f7" font-family="sans-serif" font-size="14" font-weight="bold">SQL Relational</text>
+  <text x="560" y="198" fill="#8b949e" font-family="monospace" font-size="11">Connection Pool</text>
+  <text x="560" y="225" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Atomic Rollbacks</text>
+  <text x="560" y="248" fill="#c9d1d9" font-family="sans-serif" font-size="12">• Read Replicas</text>
+  <text x="560" y="271" fill="#3fb950" font-family="monospace" font-size="11">UPTIME: 99.9%</text>
+
+  <!-- Bottom Stats bar -->
+  <rect x="50" y="380" width="700" height="65" rx="14" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)"/>
+  <text x="80" y="418" fill="#58a6ff" font-family="sans-serif" font-size="18" font-weight="bold">1st Prize Award</text>
+  <text x="240" y="418" fill="#8b949e" font-family="sans-serif" font-size="13">Inter College Technical Symposium Architecture Showcase</text>
+</svg>

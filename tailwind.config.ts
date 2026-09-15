@@ -10,22 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: {
-          DEFAULT: '#08080A',
-          subtle: '#0D0D12',
-          card: 'rgba(17, 17, 23, 0.7)',
+        obsidian: {
+          DEFAULT: '#0F0E0E',
+          card: '#141313',
+          elevated: '#1a1919',
           border: 'rgba(255, 255, 255, 0.08)',
-          'border-hover': 'rgba(255, 255, 255, 0.18)',
-        },
-        emerald: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
+          'border-hover': 'rgba(255, 255, 255, 0.2)',
         },
       },
       fontFamily: {
@@ -34,27 +24,15 @@ const config: Config = {
         display: ['var(--font-jakarta)', 'sans-serif'],
       },
       animation: {
-        'spin-slow': 'spin 12s linear infinite',
-        'border-spin': 'borderSpin 6s linear infinite',
-        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-      },
-      keyframes: {
-        borderSpin: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-        pulseGlow: {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-8px)' },
-        },
+        'spin-slow': 'spinSlow 16s linear infinite',
+        'navbar-border-spin': 'navbarBorderSpin 6s linear infinite',
+        'marquee': 'marquee 25s linear infinite',
       },
       backdropBlur: {
         xs: '2px',
+      },
+      screens: {
+        xs: '420px',
       },
     },
   },

@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --background: #08080a;
-  --foreground: #f4f4f5;
+  --background: #0f0e0e;
+  --foreground: #ffffff;
+  --card-bg: rgba(22, 21, 21, 0.7);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --hero-stroke: 2.2px rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -14,55 +17,123 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  background-color: #0f0e0e;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  background-color: #0f0e0e;
+  color: #ffffff;
+  font-family: var(--font-jakarta), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
-  selection-background-color: #10b981;
-  selection-color: #000000;
+  selection-background-color: rgba(255, 255, 255, 0.2);
+  selection-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background-color: rgba(16, 185, 129, 0.3);
+  background-color: rgba(255, 255, 255, 0.25);
   color: #ffffff;
 }
 
 /* Custom modern scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #08080a;
+  background: #0f0e0e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(16, 185, 129, 0.4);
+  background: rgba(255, 255, 255, 0.3);
 }
 
-/* Conic border rotation */
-@keyframes borderSpin {
+/* Rotating conic border for Navbar & badges */
+@keyframes navbarBorderSpin {
   0% {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.animate-navbar-border-spin {
+  animation: navbarBorderSpin 6s linear infinite;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
     transform: rotate(360deg);
   }
 }
 
-.animate-border-spin {
-  animation: borderSpin 6s linear infinite;
+.animate-spin-slow {
+  animation: spinSlow 16s linear infinite;
+}
+
+/* Marquee ribbon */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glowing Border Button */
+.glowing-border-btn-white {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glowing-border-btn-white:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Fine grain overlay */
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Mask utility for conic border */
+.mask-conic-border {
+  padding: 1px;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Hide scrollbar for tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

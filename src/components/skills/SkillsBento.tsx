@@ -1,108 +1,189 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
-  Code2,
+  CodeXml,
   Layout,
   Server,
-  Brain,
   Database,
-  CheckCircle2,
+  Brain,
+  Cloud,
+  ShieldCheck,
   Sparkles,
+  CheckCircle2,
 } from 'lucide-react';
 import { PORTFOLIO_DATA } from '@/data/portfolioData';
+import TechIcon from '@/components/ui/TechIcon';
 
-const ICONS_MAP: Record<string, React.ElementType> = {
-  Code2,
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Layout,
   Server,
-  Brain,
   Database,
+  Brain,
+  Cloud,
+  ShieldCheck,
 };
 
 export default function SkillsBento() {
+  const [activeTab, setActiveTab] = useState<string>('all');
+  const categories = PORTFOLIO_DATA.skillsData;
+
+  const filteredCategories =
+    activeTab === 'all'
+      ? categories
+      : categories.filter((cat) => cat.id === activeTab);
+
   return (
-    <section id="skills" className="relative py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="skills"
+      className="relative z-20 py-20 sm:py-28 lg:py-32 px-4 sm:px-6 md:px-8 bg-[#0F0E0E] overflow-hidden"
+      aria-label="Technical Skills and Expertise"
+      itemScope
+      itemType="https://schema.org/ItemList"
+    >
+      <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-emerald-400 mb-3"
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-zinc-300 mb-6 shadow-[0_0_15px_rgba(255,255,255,0.05)]"
           >
-            <Sparkles size={12} />
-            <span>TECHNICAL CAPABILITIES</span>
+            <CodeXml className="w-3.5 h-3.5 text-zinc-400" />
+            <span>Technical Skills and Expertise</span>
           </motion.div>
+
           <motion.h2
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.02em] leading-[0.95] text-white"
+            style={{ fontFamily: 'var(--font-jakarta), sans-serif' }}
           >
-            Core Technical Stack
+            Technologies i{' '}
+            <span className="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+              master
+            </span>
           </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="text-sm sm:text-base text-zinc-400 mt-2 max-w-xl"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-5 text-sm sm:text-base text-zinc-400 font-normal leading-relaxed max-w-2xl mx-auto"
           >
-            Technologies and frameworks I have practically applied in production, hackathons, and published research.
+            An exhaustive matrix of modern frameworks, programming languages, database architectures, and applied AI tools honed through production engineering and published research.
           </motion.p>
+
+          {/* Filter Pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-2"
+          >
+            <button
+              onClick={() => setActiveTab('all')}
+              className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 cursor-pointer ${
+                activeTab === 'all'
+                  ? 'bg-white text-black font-semibold shadow-[0_0_15px_rgba(255,255,255,0.3)]'
+                  : 'bg-white/[0.04] text-zinc-400 border border-white/10 hover:text-white hover:bg-white/[0.08]'
+              }`}
+            >
+              All Categories
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => setActiveTab(cat.id)}
+                className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 cursor-pointer ${
+                  activeTab === cat.id
+                    ? 'bg-white text-black font-semibold shadow-[0_0_15px_rgba(255,255,255,0.3)]'
+                    : 'bg-white/[0.04] text-zinc-400 border border-white/10 hover:text-white hover:bg-white/[0.08]'
+                }`}
+              >
+                {cat.name}
+              </button>
+            ))}
+          </motion.div>
         </div>
 
-        {/* Bento Grid */}
+        {/* Skills Bento Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PORTFOLIO_DATA.skills.map((group, idx) => {
-            const Icon = ICONS_MAP[group.iconName] || Code2;
-            const isLarge = idx === 0 || idx === 3;
-
+          {filteredCategories.map((group, index) => {
+            const Icon = iconMap[group.iconName] || Layout;
             return (
               <motion.div
-                key={group.category}
+                key={group.id}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                className={`p-7 rounded-3xl border border-white/[0.08] bg-white/[0.02] hover:bg-white/[0.035] hover:border-emerald-500/30 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden ${
-                  isLarge ? 'md:col-span-2 lg:col-span-1' : ''
-                }`}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="rounded-3xl p-7 bg-[#141313]/85 backdrop-blur-xl border border-white/10 hover:border-white/20 transition-all duration-300 group flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
               >
-                {/* Ambient glow on hover */}
-                <div className="absolute -top-16 -right-16 w-32 h-32 bg-emerald-500/5 blur-2xl pointer-events-none group-hover:bg-emerald-500/10 transition-colors" />
-
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-emerald-400 mb-5 group-hover:border-emerald-500/40 group-hover:scale-105 transition-all">
-                    <Icon size={20} />
+                  {/* Card Header */}
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-11 h-11 rounded-2xl bg-white/[0.05] border border-white/10 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-white/10 transition-all">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-[11px] font-mono text-zinc-500 font-bold">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-white mb-1.5 font-sans">
-                    {group.category}
+                  <h3 className="text-xl font-bold text-white tracking-tight mb-2">
+                    {group.name}
                   </h3>
 
-                  <p className="text-xs text-zinc-400 mb-6 leading-relaxed">
+                  <p className="text-xs text-zinc-400 leading-relaxed mb-6">
                     {group.description}
                   </p>
+
+                  {/* Skills List with Proficiency Meters */}
+                  <div className="space-y-4 mb-6">
+                    {group.skills.map((skill) => (
+                      <div key={skill.name} className="space-y-1.5">
+                        <div className="flex items-center justify-between text-xs font-mono">
+                          <span className="text-zinc-200 font-medium flex items-center gap-2">
+                            <TechIcon name={skill.name} className="w-4 h-4 shrink-0" />
+                            <span>{skill.name}</span>
+                            {skill.highlight && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                            )}
+                          </span>
+                          <div className="flex items-center gap-2 text-zinc-500">
+                            {'experience' in skill && Boolean((skill as any).experience) && (
+                              <span>{(skill as any).experience}</span>
+                            )}
+                            <span className="text-zinc-300 font-semibold">{skill.level}%</span>
+                          </div>
+                        </div>
+
+                        {/* Progress Bar */}
+                        <div className="h-1.5 w-full rounded-full bg-white/[0.06] overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                            className="h-full rounded-full bg-gradient-to-r from-zinc-400 via-zinc-200 to-white"
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/[0.06]">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill.name}
-                      className={`text-xs font-mono px-3 py-1.5 rounded-xl border transition-colors ${
-                        skill.highlight
-                          ? 'bg-emerald-500/10 border-emerald-500/25 text-emerald-300'
-                          : 'bg-white/[0.03] border-white/[0.08] text-zinc-300 hover:text-white hover:border-white/20'
-                      }`}
-                    >
-                      {skill.name}
-                    </span>
-                  ))}
+                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-zinc-500">
+                  <span>{group.skills.length} Technologies</span>
+                  <span className="text-zinc-400">Verified Proficiency</span>
                 </div>
               </motion.div>
             );

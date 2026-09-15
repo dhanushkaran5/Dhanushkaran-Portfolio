@@ -1,13 +1,21 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, Sparkles } from 'lucide-react';
-import { PORTFOLIO_DATA } from '@/data/portfolioData';
-import FeaturedProject from './FeaturedProject';
+import {
+  Briefcase,
+  Sparkles,
+  ArrowRight,
+  Layers,
+  Layers3,
+  Cpu,
+  TrendingUp,
+} from 'lucide-react';
+import { PORTFOLIO_DATA, Project } from '@/data/portfolioData';
 import ProjectCard from './ProjectCard';
 
-const CATEGORIES = ['All', 'AI / ML', 'Full Stack', 'Data Science', 'Web Apps'] as const;
+const CATEGORIES = ['All', 'AI & ML', 'Full-Stack', 'Web Apps'] as const;
 type CategoryFilter = (typeof CATEGORIES)[number];
 
 export default function ProjectShowcase() {
@@ -15,85 +23,146 @@ export default function ProjectShowcase() {
 
   const filteredProjects = PORTFOLIO_DATA.projects.filter((project) => {
     if (activeFilter === 'All') return true;
-    if (activeFilter === 'Web Apps') {
-      return project.category === 'Web Apps' || project.category === 'Data Science';
-    }
     return project.category === activeFilter;
   });
 
+  const featuredProject = PORTFOLIO_DATA.projects.find((p) => p.featured) || PORTFOLIO_DATA.projects[0];
+  const secondRowProjects = PORTFOLIO_DATA.projects.filter(
+    (p) => p.id === 'carbon-calculator' || p.id === 'ai-summarizer'
+  );
+  const remainingProjects = PORTFOLIO_DATA.projects.filter(
+    (p) => p.id !== featuredProject.id && p.id !== 'carbon-calculator' && p.id !== 'ai-summarizer'
+  );
+
   return (
-    <section id="projects" className="relative py-28 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="work"
+      className="relative z-20 py-24 sm:py-32 bg-[#0B0B0C] overflow-hidden"
+      aria-label="Featured Projects Portfolio"
+      itemScope
+      itemType="https://schema.org/CreativeWork"
+    >
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#ff6b3d]/5 blur-[200px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-emerald-400 mb-3"
-            >
-              <Briefcase size={12} />
-              <span>PROJECT PORTFOLIO</span>
-            </motion.div>
-            <motion.h2
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-5xl font-black text-white tracking-tight"
-            >
-              Selected Work
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="text-sm sm:text-base text-zinc-400 mt-2 max-w-lg"
-            >
-              Real applications engineered with modern technologies to solve concrete real-world problems.
-            </motion.p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-zinc-300 mb-6 shadow-[0_0_15px_rgba(255,255,255,0.04)]"
+          >
+            <Briefcase className="w-3.5 h-3.5 text-[#ff6b3d]" />
+            <span className="tracking-widest uppercase font-medium">FEATURED WORK</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-[-0.03em] leading-[1.0] text-white mb-4"
+            style={{ fontFamily: 'var(--font-jakarta), sans-serif' }}
+          >
+            Engineered{' '}
+            <span className="bg-gradient-to-r from-zinc-100 via-zinc-300 to-zinc-500 bg-clip-text text-transparent">
+              Products
+            </span>
+          </motion.h2>
+
+          {/* Stats Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-mono text-zinc-400 mt-4 tracking-wider uppercase"
+          >
+            <span>05 VERIFIED PROJECTS</span>
+            <span className="text-zinc-600 hidden sm:inline">|</span>
+            <span>01 PUBLISHED PATENT</span>
+            <span className="text-zinc-600 hidden sm:inline">|</span>
+            <span>15+ TECHNOLOGIES</span>
+          </motion.div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-md self-start md:self-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="mt-8 flex flex-wrap items-center justify-center gap-2"
+          >
             {CATEGORIES.map((cat) => {
               const isActive = activeFilter === cat;
               return (
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`relative px-3.5 py-1.5 rounded-xl text-xs font-mono transition-all duration-200 ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-mono transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? 'text-black font-semibold'
-                      : 'text-zinc-400 hover:text-white hover:bg-white/[0.04]'
+                      ? 'bg-white text-black font-semibold shadow-[0_0_15px_rgba(255,255,255,0.3)]'
+                      : 'bg-white/[0.04] text-zinc-400 border border-white/10 hover:text-white hover:bg-white/[0.08]'
                   }`}
                 >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeFilterBg"
-                      className="absolute inset-0 rounded-xl bg-white"
-                      transition={{ type: 'spring', stiffness: 400, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative z-10">{cat}</span>
+                  {cat}
                 </button>
               );
             })}
-          </div>
+          </motion.div>
         </div>
 
-        {/* Flagship Featured Project */}
-        <FeaturedProject />
+        {/* Bento Project Grid */}
+        {activeFilter === 'All' ? (
+          <div className="space-y-6 sm:space-y-8 max-w-6xl mx-auto">
+            {/* Row 1: Featured Project (AI Placement Mentor Agent - Full Span) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              <ProjectCard project={featuredProject} featured={true} />
+            </div>
 
-        {/* Project Grid */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </AnimatePresence>
+            {/* Row 2: Tree Plantation Calculator & AI Summarizer */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {secondRowProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+
+            {/* Row 3: Remaining Projects (Patent & Tech Architecture) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              {remainingProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* Filtered Category Grid */
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto gap-6 sm:gap-8">
+            <AnimatePresence mode="popLayout">
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </AnimatePresence>
+          </motion.div>
+        )}
+
+        {/* View All Projects Footer CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-14 sm:mt-16 text-center"
+        >
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/25 text-white font-mono text-xs font-semibold tracking-wider uppercase transition-all duration-300 hover:shadow-[0_0_25px_rgba(255,255,255,0.1)] group"
+          >
+            <span>View All Detailed Case Studies</span>
+            <ArrowRight className="w-4 h-4 text-[#ff8e66] transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
         </motion.div>
       </div>
     </section>
