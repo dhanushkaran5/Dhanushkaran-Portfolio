@@ -1,116 +1,971 @@
-# Rameshwar Bhagwat — Full Stack & AI Developer Portfolio
+⚡ DHANUSHKARAN M --- Premium Developer Portfolio
 
-An authentic, pixel-perfect, production-grade recreation of [rameshwarbhagwat.me](https://www.rameshwarbhagwat.me/) and [rameshwarbhagwat.me/projects](https://www.rameshwarbhagwat.me/projects), engineered with Next.js 15+ App Router, TypeScript, Tailwind CSS, Framer Motion, Lenis smooth scrolling, Three.js / Canvas particle wave vortex, and an iOS 18-inspired Terminal CLI sandbox.
+AI & Data Science Student · Software Developer · Builder
+Code • Learn • Solve • Repeat
 
----
+🌐 Live Portfolio
 
-## 🌟 Architectural Features & System Highlights
+https://dhanushkaran-portfolio.vercel.app/
 
-- **Obsidian Dark & Glassmorphic Design System:** Pure `#0B0B0C` background with frosted glass cards (`rgba(19, 18, 20, 0.85)` + `backdrop-blur-xl`), conic spinning borders (`animate-navbar-border-spin`), and radiant coral-orange glow gradients (`#ff6b3d`).
-- **Celestial Horizon Hero:** Glowing emerging celestial sphere orb, dynamic starfield canvas, and 3D character-by-character staggered typography (`AI & WEB`, `SOFTWARE`, `DEVELOPER`) with corner developer statements and quick CTAs.
-- **Overlapping About Bento (8 Authentic Cards):**
-  1. *Diagonal Rounded Profile Card* with authentic portrait styling and status badge
-  2. *Continuous Infinite Marquee Pill*
-  3. *Projects Showcase* with interactive preview cards
-  4. *Core Expertise Pills* (Python, Java, Flask, Node.js, React, SQL)
-  5. *Specialized Services Offering*
-  6. *Profiles & Social Media Hub* (GitHub, LinkedIn, Instagram)
-  7. *Key Statistics & Metrics* (04+ Projects, 35+ Skills, 1+ Years, Let's work together callout)
-- **My Core Expertise (5 Disciplines):** Interactive sidebar with proficiency progress bars, competencies checkmarks, and consultation CTA.
-- **Tracing My Path (Journey Timeline):** Chronological milestone track with central glowing axis node from 2022 to 2026, culminating in the "To Be Continued" terminal badge.
-- **Certificates & Awards (Professional Milestones):** Centered title with glowing orange gradient, verified credentials from NPTEL, Infosys Springboard, AWS, and IBM.
-- **Technologies I Scale (My Arsenal):** Dual-direction infinite smooth marquee featuring brand-accented tools with authentic logos and tagline `i scale`.
-- **Workflow & Values (5 Living Engineering Cards):**
-  1. *Cost-effective development* (Traffic velocity bar chart with `NOV 10`, `NOV 11`, `TODAY`, 1,955+ requests)
-  2. *Tailor-made systems* (Smart Traffic Computer Vision Patent)
-  3. *Scalable SaaS backend* (High-throughput services)
-  4. *AI roadmap workflows* (AI Placement Mentor Agent)
-  5. *Green Tech & Sustainability* (Carbon footprint calculator)
-- **Innovated Web Applications (Portfolio Showcase):**
-  - 4 authentic flagship projects (`AI Placement Mentor Agent`, `Tree Plantation & Carbon Calculator`, `Smart Traffic Management System`, `Distributed System Architecture`)
-  - Stats bar (`4 PROJECTS | 15+ TECHNOLOGIES | 4 INDUSTRIES`)
-  - 4 Category filter tabs (`All`, `AI & ML`, `Full-Stack`, `Web Apps`)
-  - Info `(i)` button opening an interactive quick-view modal with challenge, solution, and metrics
-  - Seamless links to editorial case studies (`/projects/[slug]`)
-- **Editorial Case Study Layout (`/projects/[slug]`):**
-  - Performance gauges and key metrics
-  - Problem & Solution cards
-  - Development Journey & Milestones (Phase 01, Phase 02, Phase 03)
-  - System architecture & technology breakdown
-- **Enclosed Floating Capsule Footer:**
-  - Signature Dhanushkaran M styling
-  - `• Available for hire` green active beacon
-  - Quick social links, `Back to Top ↑` button, and `📍 Coimbatore, Tamil Nadu, India` location
-- **Interactive Sandbox & Floating Controls:**
-  - iOS 18 Terminal CLI sandbox (`neofetch`, `matrix`, `hack`, `about`, `skills`, `projects`, `contact`)
-  - Floating AI Assistant chat drawer with typewriter answers
-  - Fixed bottom-left `>_` terminal trigger and bottom-right AI chat trigger
-  - Right-edge `• AVAILABLE FOR OPPORTUNITY` vertical badge
+A premium interactive personal portfolio showcasing my developer
+identity, projects, technical skills, experience, education,
+achievements and digital credentials.
 
----
+🧑‍💻 About Me
 
-## 🛠 Tech Stack
+I am Dhanushkaran M, an Artificial Intelligence & Data Science
+student focused on becoming a Software Developer.
 
-- **Framework:** Next.js 15+ App Router
-- **Language:** TypeScript 5.x (Strict mode)
-- **Styling:** Tailwind CSS 3.4 (Obsidian & Glassmorphic tokens)
-- **Animation & Choreography:** Framer Motion 12.x
-- **Smooth Scrolling:** Lenis Smooth Scroll
-- **Icons:** Lucide React
-- **Particle & Visuals:** HTML5 Canvas & Canvas Confetti
+My current development journey focuses on programming fundamentals,
+Java, Data Structures & Algorithms, SQL, full-stack development and
+practical software projects.
 
----
+Learn → Build → Debug → Improve → Deploy → Repeat
 
-## 📦 Project Structure
+🎯 Portfolio Vision
 
-```
-├── DESIGN-TOKENS.md         # Measured color codes, typography, shadows, borders
-├── MOTION-SPEC.md           # Motion easing curves, stagger delays, spring physics
-├── RESPONSIVE-SPEC.md       # Breakpoints & adaptive layout matrix
-├── src/
-│   ├── app/
-│   │   ├── api/stats/       # Real-time telemetry Route Handler
-│   │   ├── projects/        # Dedicated projects archive page
-│   │   │   └── [slug]/      # Editorial case study detail pages
-│   │   ├── resume/          # Interactive credentials & PDF preview
-│   │   ├── globals.css      # Custom keyframes & obsidian design tokens
-│   │   ├── layout.tsx       # Root layout, metadata, floating controls, JSON-LD
-│   │   └── page.tsx         # Home page section assembly
-│   ├── components/
-│   │   ├── about/           # Overlapping About Bento sheet & 8 cards
-│   │   ├── arsenal/         # Technologies i scale dual marquee
-│   │   ├── certifications/  # Professional Milestones & credential modal
-│   │   ├── contact/         # 3D floating ribbons, particle canvas, & form
-│   │   ├── experience/      # Tracing My Path career journey timeline
-│   │   ├── footer/          # Enclosed floating capsule pill footer
-│   │   ├── hero/            # Celestial orb horizon & 3D typography
-│   │   ├── navbar/          # Floating pill navbar & mobile drawer
-│   │   ├── projects/        # Innovated Web Applications & quick modal
-│   │   ├── services/        # My Core Expertise & proficiency progress bars
-│   │   ├── terminal/        # iOS 18 Terminal CLI sandbox & modal
-│   │   ├── ui/              # AIAssistant drawer, floating controls, smooth scroll
-│   │   └── workflow/        # 5 Living engineering cards
-│   └── data/
-│       ├── certificates.ts  # 4 authentic verified credentials
-│       ├── profile.ts       # Identity, contact, and social links
-│       ├── projects.ts      # 8 authentic production projects
-│       └── portfolioData.ts # Central typed dataset
-```
+This portfolio is designed as a Digital Developer Identity, not
+simply a resume website.
 
----
+WHO I AM
+   ↓
+WHAT I BUILD
+   ↓
+HOW I BUILD
+   ↓
+WHAT I HAVE LEARNED
+   ↓
+WHERE I AM GOING
 
-## 💻 Getting Started Locally
+✨ Main Sections
 
-```bash
-# Install dependencies
+Hero
+
+About
+
+Experience
+
+Projects
+
+Skills
+
+Achievements
+
+Digital Credentials
+
+Developer Terminal
+
+Resume
+
+Contact
+
+Social Links
+
+Responsive Design
+
+Premium Animations
+
+Smooth Scrolling
+
+Micro-interactions
+
+Accessibility
+
+Performance
+
+Deployment
+
+🦸 Hero Section
+
+The hero introduces the developer identity using:
+
+Name
+
+Developer title
+
+Short introduction
+
+Professional portrait
+
+Resume CTA
+
+Project CTA
+
+GitHub
+
+LinkedIn
+
+Scroll indicator
+
+Animated visual elements
+
+Animation Flow
+
+Preloader
+   ↓
+Background Reveal
+   ↓
+Name Reveal
+   ↓
+Headline Stagger
+   ↓
+Portrait Reveal
+   ↓
+CTA Reveal
+   ↓
+Scroll Interaction
+
+📸 Professional Profile Image
+
+The uploaded professional portrait is used in the portfolio with:
+
+Professional crop
+
+Responsive sizing
+
+Optimized loading
+
+Subtle border
+
+Soft glow
+
+Minimal parallax
+
+Hover interaction
+
+Mobile-friendly presentation
+
+👨‍💻 About
+
+The About section communicates:
+
+Academic background
+
+Software development direction
+
+Programming journey
+
+Problem-solving mindset
+
+Project-building approach
+
+Career goals
+
+💼 Experience
+
+Litz Technologies
+
+Intern --- May 2025
+
+Areas of exposure:
+
+Responsive web interfaces
+
+Web development
+
+UI implementation
+
+Cloud deployment fundamentals
+
+Technical development workflows
+
+EDU TANTR
+
+Intern --- December 2025
+
+Areas of exposure:
+
+Real-world datasets
+
+Data cleaning
+
+Data preprocessing
+
+Data analysis
+
+Data-science workflows
+
+Technical collaboration
+
+🚀 Featured Projects
+
+01 --- 🤖 AI Placement Mentor Agent
+
+An AI-powered career and placement assistance platform designed to help
+students with career preparation and placement-related guidance.
+
+Concept
+
+Resume
+  ↓
+Resume Analysis
+  ↓
+Skill Gap Identification
+  ↓
+Career Direction
+  ↓
+Placement Preparation
+  ↓
+Interview Preparation
+
+Technology Focus
+
+Java
+
+Spring Boot
+
+React
+
+AI
+
+Full-stack development
+
+🌐 Live Application
+
+https://ai-placement-mentor-1-4gyw.onrender.com/
+
+02 --- 🌱 Tree Plantation & Carbon Reduction Calculator
+
+A sustainability-focused application for calculating carbon impact and
+understanding tree plantation requirements.
+
+Features
+
+Carbon calculation
+
+CO₂ estimation
+
+Tree offset calculation
+
+Interactive results
+
+Sustainability insights
+
+Data visualization
+
+🌐 Live Application
+
+https://tree-plantation-calculator-1.onrender.com/
+
+🏆 Achievement
+
+Finalist --- Eclearnix Hackathon, KPR College
+
+The Live button should open the Tree Plantation Calculator deployment
+above and must not redirect to another portfolio page.
+
+03 --- 📄 AI Summarizer
+
+An AI-powered application focused on converting lengthy text and
+documents into concise and useful summaries.
+
+Focus Areas
+
+Text summarization
+
+Document processing
+
+Information extraction
+
+AI-assisted text understanding
+
+User-friendly web interface
+
+🌐 Live Application
+
+https://ai-summarizer-1-8nq8.onrender.com/
+
+🧩 Project Showcase
+
+Each project card communicates:
+
+Project Number
+   +
+Project Name
+   +
+Description
+   +
+Technology Stack
+   +
+Project Preview
+   +
+Live Application
+   +
+Source / Details
+
+Project Interaction
+
+Mouse Enter
+   ↓
+Spotlight
+   ↓
+Card Lift
+   ↓
+Image Scale
+   ↓
+Technology Reveal
+   ↓
+Action Buttons
+
+🌀 Premium Animation System
+
+Animation is used to improve storytelling rather than add unnecessary
+visual noise.
+
+Page Entrance
+
+Opacity + Blur + Translate
+          ↓
+     Smooth Reveal
+
+Scroll Reveal
+
+Section enters viewport
+        ↓
+Visibility trigger
+        ↓
+Stagger children
+        ↓
+Content reveal
+
+Typography
+
+Word stagger
+
+Line/character reveal where appropriate
+
+Opacity
+
+Transform
+
+Subtle blur
+
+Smooth easing
+
+🧲 Magnetic Interactions
+
+Subtle magnetic movement can be used for:
+
+View Projects
+
+Resume
+
+Live App
+
+Contact
+
+Credentials
+
+The effect should remain professional and usable.
+
+🖱️ Custom Cursor
+
+Desktop-only enhanced cursor:
+
+Default:      ●
+Interactive:  ◎
+Project:      Spotlight + Cursor Interaction
+
+The custom cursor is disabled or simplified on touch devices.
+
+🌊 Smooth Scrolling
+
+The portfolio uses smooth scrolling for a polished experience.
+
+Supports:
+
+Smooth section transitions
+
+Scroll-triggered animation
+
+Anchor navigation
+
+Reduced-motion fallback
+
+Touch-device compatibility
+
+🎨 UI/UX Design Language
+
+The visual system focuses on:
+
+Dark editorial aesthetics
+
+Large typography
+
+Strong spacing
+
+Bento layouts
+
+Glassmorphism
+
+Minimal borders
+
+Subtle glow
+
+Premium cards
+
+Interactive buttons
+
+Clean information hierarchy
+
+Less noise. More personality.
+
+🧠 Technical Skills
+
+The portfolio's existing Skills section should be preserved as
+configured in the project.
+
+It should not automatically replace the portfolio skills with a
+different resume skills list.
+
+Suggested categories:
+
+Programming
+Data Structures & Algorithms
+Web Development
+AI / Data Science
+Databases
+Developer Tools
+Cloud / Deployment
+
+⚙️ Technology Stack
+
+Frontend
+
+Next.js
+
+React
+
+TypeScript
+
+Tailwind CSS
+
+Animation
+
+Framer Motion
+
+Lenis
+
+CSS Transitions
+
+Scroll Animations
+
+Micro-interactions
+
+UI
+
+Lucide React
+
+Bento Layouts
+
+Glassmorphism
+
+Responsive Components
+
+Development
+
+Git
+
+GitHub
+
+VS Code
+
+Deployment
+
+Vercel
+
+📜 Digital Credentials
+
+The portfolio includes a dedicated credential section.
+
+Each credential can contain:
+
+Credential title
+
+Issuer
+
+Credential/view button
+
+External link
+
+Consistent card design
+
+Hover animation
+
+Credential Links
+
+Credential 01
+
+https://drive.google.com/file/d/1SirkPfEJKHEuOr8Q5BrSMXyRAq7Y0zBI/view?usp=drive_link
+
+Credential 02
+
+https://drive.google.com/file/d/1v-lpbWR_LpKbGD5Gyq_WMB36IMktqp9q/view?usp=drive_link
+
+Credential 03
+
+https://drive.google.com/file/d/144nBcidyfSx8yAf9eA0SgnuMPqHAbznU/view?usp=drive_link
+
+Credential 04
+
+https://drive.google.com/file/d/11If_X6chVJPBiwoCO0tCqk4oJUa9waGP/view?usp=drive_link
+
+Updated LLM Credential
+
+Remove the previous LLM certificate and replace it with:
+
+https://drive.google.com/file/d/1Gn_DEuM9QksKd_HwQCnXfW5aBPBBkZ3W/view?usp=drive_link
+
+🏆 Achievements
+
+📜 Patent Publication
+
+Smart Traffic Management System for Urban Congestion
+
+Indian Patent Application No. 202541099319 A
+
+November 2025
+
+🥇 1st Prize
+
+Tech Architecture --- Inter College Symposium
+
+🏅 Hackathon Finalist
+
+Tree Plantation & Carbon Reduction Calculator
+
+Eclearnix Hackathon --- KPR College
+
+🎓 Education
+
+B.Tech --- Artificial Intelligence & Data Science
+
+V.S.B College of Engineering Technical Campus
+
+2023 -- 2027
+
+CGPA: 8.10
+
+💻 Developer Terminal
+
+A developer-style terminal provides an interactive portfolio experience.
+
+$ whoami
+
+Dhanushkaran M
+AI & Data Science Student
+Software Developer
+
+$ projects
+
+AI Placement Mentor Agent
+Tree Plantation Calculator
+AI Summarizer
+
+$ education
+
+B.Tech AI & Data Science
+
+$ contact
+
+Let's build something meaningful.
+
+The terminal complements normal navigation rather than replacing it.
+
+🧭 Navigation
+
+Primary navigation:
+
+About
+Experience
+Projects
+Skills
+Achievements
+Credentials
+Contact
+
+Additional actions:
+
+Resume
+GitHub
+LinkedIn
+
+📱 Responsive Design
+
+The portfolio is designed for:
+
+Desktop
+   ↓
+Laptop
+   ↓
+Tablet
+   ↓
+Mobile
+
+Desktop
+
+Large typography
+
+Multi-column layouts
+
+Advanced cursor interactions
+
+Project hover effects
+
+Tablet
+
+Flexible grids
+
+Rebalanced spacing
+
+Reduced animation intensity
+
+Mobile
+
+Single-column layout
+
+Touch-friendly controls
+
+Compact navigation
+
+No desktop-only cursor
+
+Optimized typography
+
+No horizontal overflow
+
+♿ Accessibility
+
+The portfolio should support:
+
+Semantic HTML
+
+Keyboard navigation
+
+Visible focus states
+
+Accessible buttons
+
+Accessible external links
+
+Responsive text
+
+Good contrast
+
+Reduced-motion support
+
+Touch-friendly controls
+
+⚡ Performance
+
+Visual quality should not compromise speed.
+
+Optimized Images
+      +
+Lazy Loading
+      +
+Code Splitting
+      +
+GPU-friendly Transforms
+      +
+Controlled Animations
+      +
+Responsive Rendering
+      =
+Fast Interactive Portfolio
+
+Prefer:
+
+transform
+opacity
+
+for animations to minimize unnecessary layout work.
+
+🔐 External Links
+
+External links should use secure browser behavior:
+
+target="_blank"
+rel="noopener noreferrer"
+
+Live project buttons must point directly to the actual deployed
+applications.
+
+📂 Project Structure
+
+dhanushkaran-portfolio/
+│
+├── app/
+│   ├── page.tsx
+│   ├── projects/
+│   ├── resume/
+│   └── ...
+│
+├── components/
+│   ├── Navbar/
+│   ├── Hero/
+│   ├── About/
+│   ├── Projects/
+│   ├── Experience/
+│   ├── Skills/
+│   ├── Achievements/
+│   ├── Credentials/
+│   ├── Terminal/
+│   ├── Contact/
+│   └── ...
+│
+├── data/
+│   ├── projects
+│   ├── certificates
+│   └── ...
+│
+├── public/
+│   ├── images/
+│   └── assets/
+│
+├── lib/
+├── styles/
+├── package.json
+├── tsconfig.json
+└── README.md
+
+🛠️ Local Development
+
+git clone <YOUR_REPOSITORY_URL>
+cd dhanushkaran-portfolio
 npm install
-
-# Run the development server
 npm run dev
 
-# Build for production
-npm run build
+Open:
 
-# Start production server
-npm run start
-```
+http://localhost:3000
+
+🚀 Production
+
+npm run build
+npm start
+npm run lint
+
+☁️ Deployment
+
+The portfolio is deployed through Vercel.
+
+GitHub
+   ↓
+Push Code
+   ↓
+Vercel
+   ↓
+Build
+   ↓
+Deploy
+   ↓
+Production Portfolio
+
+Production URL
+
+https://dhanushkaran-portfolio.vercel.app/
+
+🔄 Development Workflow
+
+IDEA
+ ↓
+PLAN
+ ↓
+DESIGN
+ ↓
+CODE
+ ↓
+TEST
+ ↓
+DEBUG
+ ↓
+IMPROVE
+ ↓
+DEPLOY
+
+🧪 Production Checklist
+
+[✓] TypeScript check
+[✓] Production build
+[✓] Responsive testing
+[✓] Navigation testing
+[✓] Project links
+[✓] Credential links
+[✓] Resume link
+[✓] GitHub link
+[✓] LinkedIn link
+[✓] Mobile menu
+[✓] Animation testing
+[✓] Accessibility
+[✓] External links
+[✓] No horizontal overflow
+[✓] Image optimization
+
+🎨 Design Principles
+
+01 --- Clarity
+
+Content should remain understandable even without animation.
+
+02 --- Personality
+
+The design should communicate the developer behind the code.
+
+03 --- Motion
+
+Animation should guide attention and improve navigation.
+
+04 --- Performance
+
+Interactive design should remain fast.
+
+05 --- Authenticity
+
+Projects, skills and achievements should represent genuine work.
+
+🧭 Design Inspiration
+
+The portfolio takes inspiration from modern premium developer
+portfolios, particularly typography, smooth scrolling, motion design,
+Bento layouts and interactive project presentation.
+
+Reference inspiration:
+
+https://www.rameshwarbhagwat.me/
+
+The portfolio identity, content and assets are maintained for
+Dhanushkaran M.
+
+📊 Portfolio Experience Map
+
+                    DHANUSHKARAN M
+                           │
+          ┌────────────────┼────────────────┐
+          ↓                ↓                ↓
+        ABOUT          EXPERIENCE        PROJECTS
+          │                │                │
+          ↓                ↓                ↓
+       SKILLS         ACHIEVEMENTS      LIVE APPS
+          │                │                │
+          └────────────────┼────────────────┘
+                           ↓
+                     CREDENTIALS
+                           ↓
+                       TERMINAL
+                           ↓
+                        CONTACT
+
+🌱 Project Philosophy
+
+Projects are built around practical problems and learning through
+implementation.
+
+Primary exploration areas:
+
+AI
+Software Development
+Career Technology
+Sustainability
+Data
+Automation
+Web Applications
+Problem Solving
+
+🎯 Current Development Focus
+
+Java
+  +
+Data Structures & Algorithms
+  +
+Software Development
+  +
+Full-Stack Development
+  +
+Real-world Projects
+
+🔮 Future Improvements
+
+Potential improvements:
+
+Advanced project case studies
+
+Better project previews
+
+More interactive experiences
+
+Improved accessibility
+
+Performance optimization
+
+Detailed technical write-ups
+
+Enhanced mobile interactions
+
+Additional verified credentials
+
+More developer tools
+
+🔗 Important Links
+
+Resource                            Link
+
+🌐 Portfolio                        https://dhanushkaran-portfolio.vercel.app/
+
+🤖 AI Placement Mentor              https://ai-placement-mentor-1-4gyw.onrender.com/
+
+🌱 Tree Plantation Calculator       https://tree-plantation-calculator-1.onrender.com/
+
+📄 AI Summarizer                    https://ai-summarizer-1-8nq8.onrender.com/
+
+💻 GitHub                           https://github.com/dhanushkaran5
+
+💼 LinkedIn                         https://linkedin.com/in/dhanushkaran-m-35ab77330
+
+📬 Contact
+
+For collaboration, project discussions or professional opportunities:
+
+Portfolio:
+https://dhanushkaran-portfolio.vercel.app/
+
+GitHub:
+https://github.com/dhanushkaran5
+
+LinkedIn:
+https://linkedin.com/in/dhanushkaran-m-35ab77330
+
+👋 Developer Note
+
+This portfolio is continuously evolving.
+
+Every feature represents something learned.
+Every bug represents something understood.
+Every project represents something built.
+
+CODE
+ ↓
+LEARN
+ ↓
+BUILD
+ ↓
+DEBUG
+ ↓
+SOLVE
+ ↓
+REPEAT
+
+::: {align="center"}
+
+⚡ DHANUSHKARAN M
+
+AI & Data Science Student · Software Developer
+
+Code • Learn • Solve • Repeat
+
+🚀 Explore My Portfolio
+
+https://dhanushkaran-portfolio.vercel.app/
+
+Thanks for visiting! ⭐
+:::
