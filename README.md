@@ -1,204 +1,280 @@
-⚡ DHANUSHKARAN M --- Premium Developer Portfolio
+# ⚡ Dhanushkaran M — Developer Portfolio
 
-AI & Data Science Student · Software Developer · Builder
-Code • Learn • Solve • Repeat
+![Portfolio](https://img.shields.io/badge/Portfolio-Live-success?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-Animation-black?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel)
 
-🌐 Live Portfolio
+> **Code • Learn • Solve • Repeat**
 
+### ⚡ AI & Data Science Student | Software Developer | Builder
+
+A premium developer portfolio designed to present my **skills, projects, experience, achievements, certifications, education, and developer journey** through a modern interactive web experience.
+
+🌐 **Live Portfolio:**  
 https://dhanushkaran-portfolio.vercel.app/
 
-A premium interactive personal portfolio showcasing my developer
-identity, projects, technical skills, experience, education,
-achievements and digital credentials.
+---
 
-🧑‍💻 About Me
+# 📖 Overview
 
-I am Dhanushkaran M, an Artificial Intelligence & Data Science
-student focused on becoming a Software Developer.
+This portfolio is more than a traditional resume website.
 
-My current development journey focuses on programming fundamentals,
-Java, Data Structures & Algorithms, SQL, full-stack development and
-practical software projects.
+It is designed as a **digital developer identity** that communicates:
 
-Learn → Build → Debug → Improve → Deploy → Repeat
+- Who I am
+- What I build
+- What I am learning
+- What technologies I work with
+- What projects I have developed
+- What I have achieved
+- What I am currently improving
+- Where I want to grow as a software developer
 
-🎯 Portfolio Vision
+The portfolio combines:
 
-This portfolio is designed as a Digital Developer Identity, not
-simply a resume website.
+- Modern frontend engineering
+- Responsive UI design
+- Interactive animations
+- Project storytelling
+- Developer-focused information architecture
+- Accessibility
+- Performance optimization
+- Smooth navigation
+- Premium visual presentation
 
-WHO I AM
-   ↓
-WHAT I BUILD
-   ↓
-HOW I BUILD
-   ↓
-WHAT I HAVE LEARNED
-   ↓
-WHERE I AM GOING
+The goal is to create a portfolio that feels like a **real software product**, not just a collection of resume sections.
 
-✨ Main Sections
+---
 
-Hero
+# 🎯 Portfolio Vision
 
-About
+The portfolio follows this experience flow:
 
-Experience
-
-Projects
-
-Skills
-
-Achievements
-
-Digital Credentials
-
-Developer Terminal
-
+```text
+Developer Identity
+       ↓
+Professional Introduction
+       ↓
+About & Experience
+       ↓
+Featured Projects
+       ↓
+Technical Skills
+       ↓
+Achievements & Certifications
+       ↓
+Developer Journey
+       ↓
 Resume
+       ↓
+Contact & Social Links
+```
 
+The main idea is:
+
+```text
+Resume
+  ↓
+Interactive Developer Identity
+  ↓
+Projects + Skills + Experience
+  ↓
+Recruiter Understanding
+  ↓
+Professional Developer Brand
+```
+
+---
+
+# 💡 Problem
+
+Traditional student portfolios often behave like simple digital resumes.
+
+Common problems include:
+
+- Too much text
+- Weak visual hierarchy
+- Generic templates
+- Poor project presentation
+- Limited interaction
+- No clear developer identity
+- Difficult navigation
+- Inconsistent design
+- Poor mobile experience
+- No storytelling around projects
+
+A recruiter should be able to understand a developer within a few moments.
+
+The portfolio therefore focuses on:
+
+> **Clarity + Design + Projects + Skills + Experience + Professional Identity**
+
+---
+
+# 🚀 Solution
+
+The portfolio solves this by creating a structured developer experience.
+
+The platform presents information through:
+
+```text
+Hero Section
+       ↓
+About Me
+       ↓
+Experience
+       ↓
+Featured Projects
+       ↓
+Skills
+       ↓
+Achievements
+       ↓
+Certifications
+       ↓
+Developer Terminal
+       ↓
+Resume
+       ↓
 Contact
+```
 
-Social Links
+Each section is designed to communicate a specific part of the developer profile.
 
-Responsive Design
+---
 
-Premium Animations
+# ✨ Key Features
 
-Smooth Scrolling
+## 1. Premium Hero Section
 
-Micro-interactions
+The hero section immediately communicates:
 
-Accessibility
+- Name
+- Professional identity
+- Current focus
+- Personal tagline
+- Developer introduction
+- Resume access
+- Project access
+- GitHub
+- LinkedIn
+- Professional portrait
 
-Performance
+### Hero Flow
 
-Deployment
-
-🦸 Hero Section
-
-The hero introduces the developer identity using:
-
+```text
 Name
+ ↓
+Professional Identity
+ ↓
+Short Introduction
+ ↓
+Current Focus
+ ↓
+Primary CTA
+ ↓
+Secondary CTA
+ ↓
+Social Links
+```
 
-Developer title
+---
 
-Short introduction
+# 2. About Me
 
-Professional portrait
+The About section explains:
 
-Resume CTA
+- Academic background
+- Developer interests
+- Software development journey
+- Current learning direction
+- Technical interests
+- Career goals
 
-Project CTA
+The section is designed to communicate the person behind the code.
 
-GitHub
+---
 
-LinkedIn
+# 3. Experience Section
 
-Scroll indicator
+The experience section presents internship and practical exposure.
 
-Animated visual elements
+### Experience
 
-Animation Flow
+#### Litz Technologies
 
-Preloader
-   ↓
-Background Reveal
-   ↓
-Name Reveal
-   ↓
-Headline Stagger
-   ↓
-Portrait Reveal
-   ↓
-CTA Reveal
-   ↓
-Scroll Interaction
+**Intern — May 2025**
 
-📸 Professional Profile Image
+Experience involving:
 
-The uploaded professional portrait is used in the portfolio with:
+- Web development exposure
+- Practical software development
+- Internal module development
+- Frontend implementation
+- Technical collaboration
 
-Professional crop
+---
 
-Responsive sizing
+#### EDU TANTR
 
-Optimized loading
+**Intern — December 2025**
 
-Subtle border
+Experience involving:
 
-Soft glow
+- Python-based data science workflows
+- Dataset cleaning
+- Data preprocessing
+- Analytical problem solving
+- Collaborative technical tasks
+- Industry-oriented workflows
 
-Minimal parallax
+---
 
-Hover interaction
+# 4. Featured Projects
 
-Mobile-friendly presentation
+Projects are presented as the most important proof of practical development ability.
 
-👨‍💻 About
+The portfolio currently highlights:
 
-The About section communicates:
+```text
+01 — AI Placement Mentor Agent
+02 — Tree Plantation & Carbon Reduction Calculator
+03 — AI Summarizer
+04 — SignBridge-AI
+```
 
-Academic background
+Each project communicates:
 
-Software development direction
+- Project name
+- Project number
+- Problem
+- Solution
+- Key capabilities
+- Technology stack
+- Project preview
+- Live demo
+- Source code
 
-Programming journey
+---
 
-Problem-solving mindset
+# 🤖 Project 01 — AI Placement Mentor Agent
 
-Project-building approach
+### AI-Powered Career & Placement Assistance Platform
 
-Career goals
+An AI-powered career guidance platform designed to help students understand their skills, identify gaps, explore suitable career directions, and prepare for placements.
 
-💼 Experience
+### Project Vision
 
-Litz Technologies
-
-Intern --- May 2025
-
-Areas of exposure:
-
-Responsive web interfaces
-
-Web development
-
-UI implementation
-
-Cloud deployment fundamentals
-
-Technical development workflows
-
-EDU TANTR
-
-Intern --- December 2025
-
-Areas of exposure:
-
-Real-world datasets
-
-Data cleaning
-
-Data preprocessing
-
-Data analysis
-
-Data-science workflows
-
-Technical collaboration
-
-🚀 Featured Projects
-
-01 --- 🤖 AI Placement Mentor Agent
-
-An AI-powered career and placement assistance platform designed to help
-students with career preparation and placement-related guidance.
-
-Concept
-
+```text
 Resume
   ↓
 Resume Analysis
+  ↓
+Skill Extraction
   ↓
 Skill Gap Identification
   ↓
@@ -207,393 +283,466 @@ Career Direction
 Placement Preparation
   ↓
 Interview Preparation
+```
 
-Technology Focus
+### Core Features
 
-Java
+- Resume analysis
+- Skill identification
+- Skill-gap analysis
+- Career recommendations
+- Placement preparation
+- Interview preparation
+- Personalized learning direction
+- Career assistance
 
-Spring Boot
+### Architecture
 
-React
+```text
+User
+ ↓
+React Frontend
+ ↓
+REST API
+ ↓
+Spring Boot Backend
+ ↓
+Resume / Career Processing
+ ↓
+Database
+ ↓
+AI-Assisted Recommendations
+ ↓
+Personalized Results
+```
 
-AI
+### Technology
 
-Full-stack development
+- Java
+- Spring Boot
+- React
+- AI technologies
+- REST APIs
+- Database
 
-🌐 Live Application
+### Project Goal
 
-https://ai-placement-mentor-1-4gyw.onrender.com/
+The main goal is to create a practical career assistant that helps students understand:
 
-02 --- 🌱 Tree Plantation & Carbon Reduction Calculator
+> **Where am I now? → What skills am I missing? → What should I learn next? → How can I prepare for placements?**
 
-A sustainability-focused application for calculating carbon impact and
-understanding tree plantation requirements.
+---
 
-Features
+# 🌱 Project 02 — Tree Plantation & Carbon Reduction Calculator
 
-Carbon calculation
+### Sustainability & Carbon Reduction Platform
 
-CO₂ estimation
+A web-based sustainability application designed to calculate estimated carbon reduction through tree plantation and provide meaningful environmental insights.
 
-Tree offset calculation
+### Project Vision
 
-Interactive results
+```text
+Tree Information
+       ↓
+Tree / Soil / City Data
+       ↓
+Carbon Calculation
+       ↓
+CO₂ Estimation
+       ↓
+Carbon Offset
+       ↓
+Environmental Results
+       ↓
+Sustainability Insights
+```
 
-Sustainability insights
+### Core Features
 
-Data visualization
+- Tree selection
+- City-based information
+- Soil information
+- Carbon calculation
+- CO₂ estimation
+- Tree offset calculation
+- Environmental insights
+- Data visualization
+- Sustainability results
 
-🌐 Live Application
+### Project Purpose
 
-https://tree-plantation-calculator-1.onrender.com/
+The platform aims to make environmental impact easier to understand by converting tree plantation information into measurable carbon-related results.
 
-🏆 Achievement
+### Achievement
 
-Finalist --- Eclearnix Hackathon, KPR College
+🏆 **KPR Hackathon Finalist**
 
-The Live button should open the Tree Plantation Calculator deployment
-above and must not redirect to another portfolio page.
+---
 
-03 --- 📄 AI Summarizer
+# 📝 Project 03 — AI Summarizer
 
-An AI-powered application focused on converting lengthy text and
-documents into concise and useful summaries.
+### AI-Powered Document Understanding Platform
 
-Focus Areas
+An AI-powered application designed to help users summarize documents and extract important information through a clean and user-friendly interface.
 
-Text summarization
+### Project Vision
 
-Document processing
+```text
+Document / Text
+       ↓
+Content Processing
+       ↓
+AI Analysis
+       ↓
+Information Extraction
+       ↓
+Summarization
+       ↓
+Readable Results
+```
 
-Information extraction
+### Core Features
 
-AI-assisted text understanding
+- Text summarization
+- Document summarization
+- Information extraction
+- Question answering
+- Evidence-oriented results
+- Document comparison
+- Insight extraction
+- Multiple summary modes
+- User-friendly interface
 
-User-friendly web interface
+### Goal
 
-🌐 Live Application
+The project focuses on reducing the time required to understand large amounts of information.
 
-https://ai-summarizer-1-8nq8.onrender.com/
+---
 
-🧩 Project Showcase
+# 🤟 Project 04 — SignBridge-AI
 
-Each project card communicates:
+### AI Sign Language Translation Platform
 
+SignBridge-AI is an AI-powered sign language recognition and communication platform designed to recognize visual sign gestures and convert them into understandable text and speech.
+
+### Vision
+
+```text
+Sign Gesture
+      ↓
+Camera / Image / Video
+      ↓
+Hand Detection
+      ↓
+Landmark Extraction
+      ↓
+Feature Processing
+      ↓
+AI Model
+      ↓
+Sign Classification
+      ↓
+Text
+      ↓
+Speech
+```
+
+### Core Features
+
+- Real-time sign recognition
+- Image-based recognition
+- Video recognition
+- Hand landmark detection
+- AI-based prediction
+- Confidence prediction
+- Text output
+- Text-to-speech
+- Dataset management
+- Prediction analytics
+- ASL support
+- Expandable ISL support
+
+### Architecture
+
+```text
+User
+ ↓
+React Frontend
+ ↓
+Flask REST API
+ ↓
+OpenCV
+ ↓
+MediaPipe
+ ↓
+Feature Extraction
+ ↓
+TensorFlow / Keras
+ ↓
+Sign Classification
+ ↓
+Text
+ ↓
+Speech
+```
+
+### Purpose
+
+The project focuses on using computer vision and artificial intelligence to reduce communication barriers between sign-language users and non-signers.
+
+---
+
+# 🧩 Project Showcase Architecture
+
+Every project card follows a consistent presentation model:
+
+```text
 Project Number
-   +
+      ↓
 Project Name
-   +
-Description
-   +
+      ↓
+Short Description
+      ↓
 Technology Stack
-   +
+      ↓
 Project Preview
-   +
-Live Application
-   +
-Source / Details
+      ↓
+Live Demo
+      ↓
+Source Code
+```
 
-Project Interaction
+### Interaction
 
-Mouse Enter
+Project cards include:
+
+- Spotlight effects
+- Hover interaction
+- Card elevation
+- Image scaling
+- Technology reveal
+- Action buttons
+- Responsive layouts
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- HTML
+- CSS
+- JavaScript
+
+## UI & Animation
+
+- Framer Motion
+- Lenis
+- Lucide React
+- CSS animations
+- Micro-interactions
+
+## Development Tools
+
+- Git
+- GitHub
+- VS Code
+
+## Deployment
+
+- Vercel
+
+---
+
+# 🏗️ Portfolio Architecture
+
+```text
+User
+ ↓
+Next.js Application
+ ↓
+React Components
+ ↓
+Reusable UI Components
+ ↓
+Data-driven Sections
+ ↓
+Interactive Animations
+ ↓
+Responsive Layout
+ ↓
+Vercel Deployment
+```
+
+---
+
+# 📂 Project Structure
+
+```text
+dhanushkaran-portfolio/
+│
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+│
+├── components/
+│   ├── Hero/
+│   ├── About/
+│   ├── Experience/
+│   ├── Projects/
+│   ├── Skills/
+│   ├── Achievements/
+│   ├── Credentials/
+│   ├── Terminal/
+│   ├── Resume/
+│   ├── Contact/
+│   └── Navigation/
+│
+├── data/
+│   ├── projects
+│   ├── skills
+│   ├── experience
+│   ├── achievements
+│   └── credentials
+│
+├── public/
+│   ├── images/
+│   ├── resume/
+│   └── assets/
+│
+├── lib/
+│   └── utilities
+│
+├── styles/
+│   └── styling
+│
+├── package.json
+├── README.md
+└── configuration files
+```
+
+---
+
+# 🔄 User Experience Workflow
+
+The complete portfolio experience follows:
+
+```text
+Landing
    ↓
-Spotlight
+Hero
    ↓
-Card Lift
-   ↓
-Image Scale
-   ↓
-Technology Reveal
-   ↓
-Action Buttons
-
-🌀 Premium Animation System
-
-Animation is used to improve storytelling rather than add unnecessary
-visual noise.
-
-Page Entrance
-
-Opacity + Blur + Translate
-          ↓
-     Smooth Reveal
-
-Scroll Reveal
-
-Section enters viewport
-        ↓
-Visibility trigger
-        ↓
-Stagger children
-        ↓
-Content reveal
-
-Typography
-
-Word stagger
-
-Line/character reveal where appropriate
-
-Opacity
-
-Transform
-
-Subtle blur
-
-Smooth easing
-
-🧲 Magnetic Interactions
-
-Subtle magnetic movement can be used for:
-
-View Projects
-
-Resume
-
-Live App
-
-Contact
-
-Credentials
-
-The effect should remain professional and usable.
-
-🖱️ Custom Cursor
-
-Desktop-only enhanced cursor:
-
-Default:      ●
-Interactive:  ◎
-Project:      Spotlight + Cursor Interaction
-
-The custom cursor is disabled or simplified on touch devices.
-
-🌊 Smooth Scrolling
-
-The portfolio uses smooth scrolling for a polished experience.
-
-Supports:
-
-Smooth section transitions
-
-Scroll-triggered animation
-
-Anchor navigation
-
-Reduced-motion fallback
-
-Touch-device compatibility
-
-🎨 UI/UX Design Language
-
-The visual system focuses on:
-
-Dark editorial aesthetics
-
-Large typography
-
-Strong spacing
-
-Bento layouts
-
-Glassmorphism
-
-Minimal borders
-
-Subtle glow
-
-Premium cards
-
-Interactive buttons
-
-Clean information hierarchy
-
-Less noise. More personality.
-
-🧠 Technical Skills
-
-The portfolio's existing Skills section should be preserved as
-configured in the project.
-
-It should not automatically replace the portfolio skills with a
-different resume skills list.
-
-Suggested categories:
-
-Programming
-Data Structures & Algorithms
-Web Development
-AI / Data Science
-Databases
-Developer Tools
-Cloud / Deployment
-
-⚙️ Technology Stack
-
-Frontend
-
-Next.js
-
-React
-
-TypeScript
-
-Tailwind CSS
-
-Animation
-
-Framer Motion
-
-Lenis
-
-CSS Transitions
-
-Scroll Animations
-
-Micro-interactions
-
-UI
-
-Lucide React
-
-Bento Layouts
-
-Glassmorphism
-
-Responsive Components
-
-Development
-
-Git
-
-GitHub
-
-VS Code
-
-Deployment
-
-Vercel
-
-📜 Digital Credentials
-
-The portfolio includes a dedicated credential section.
-
-Each credential can contain:
-
-Credential title
-
-Issuer
-
-Credential/view button
-
-External link
-
-Consistent card design
-
-Hover animation
-
-Credential Links
-
-Credential 01
-
-https://drive.google.com/file/d/1SirkPfEJKHEuOr8Q5BrSMXyRAq7Y0zBI/view?usp=drive_link
-
-Credential 02
-
-https://drive.google.com/file/d/1v-lpbWR_LpKbGD5Gyq_WMB36IMktqp9q/view?usp=drive_link
-
-Credential 03
-
-https://drive.google.com/file/d/144nBcidyfSx8yAf9eA0SgnuMPqHAbznU/view?usp=drive_link
-
-Credential 04
-
-https://drive.google.com/file/d/11If_X6chVJPBiwoCO0tCqk4oJUa9waGP/view?usp=drive_link
-
-Updated LLM Credential
-
-Remove the previous LLM certificate and replace it with:
-
-https://drive.google.com/file/d/1Gn_DEuM9QksKd_HwQCnXfW5aBPBBkZ3W/view?usp=drive_link
-
-🏆 Achievements
-
-📜 Patent Publication
-
-Smart Traffic Management System for Urban Congestion
-
-Indian Patent Application No. 202541099319 A
-
-November 2025
-
-🥇 1st Prize
-
-Tech Architecture --- Inter College Symposium
-
-🏅 Hackathon Finalist
-
-Tree Plantation & Carbon Reduction Calculator
-
-Eclearnix Hackathon --- KPR College
-
-🎓 Education
-
-B.Tech --- Artificial Intelligence & Data Science
-
-V.S.B College of Engineering Technical Campus
-
-2023 -- 2027
-
-CGPA: 8.10
-
-💻 Developer Terminal
-
-A developer-style terminal provides an interactive portfolio experience.
-
-$ whoami
-
-Dhanushkaran M
-AI & Data Science Student
-Software Developer
-
-$ projects
-
-AI Placement Mentor Agent
-Tree Plantation Calculator
-AI Summarizer
-
-$ education
-
-B.Tech AI & Data Science
-
-$ contact
-
-Let's build something meaningful.
-
-The terminal complements normal navigation rather than replacing it.
-
-🧭 Navigation
-
-Primary navigation:
-
 About
+   ↓
 Experience
+   ↓
 Projects
+   ↓
 Skills
+   ↓
 Achievements
+   ↓
 Credentials
-Contact
-
-Additional actions:
-
+   ↓
+Developer Terminal
+   ↓
 Resume
-GitHub
-LinkedIn
+   ↓
+Contact
+```
 
-📱 Responsive Design
+The user can navigate directly through the main navigation without unnecessary page transitions.
+
+---
+
+# 🎨 Design System
+
+The visual language follows a modern dark editorial aesthetic.
+
+### Design Principles
+
+```text
+Dark Background
+      +
+Large Typography
+      +
+Premium Cards
+      +
+Glassmorphism
+      +
+Subtle Glow
+      +
+Minimal Borders
+      +
+Smooth Motion
+      +
+Clear Hierarchy
+```
+
+### Visual Characteristics
+
+- Dark editorial interface
+- Large typography
+- Bento-style layouts
+- Glassmorphism
+- Subtle gradients
+- Minimal borders
+- Premium cards
+- Soft glow effects
+- Clean spacing
+- High contrast
+- Responsive layouts
+
+---
+
+# 🎬 Animation System
+
+Animations are designed to improve the experience rather than distract from the content.
+
+### Animation Areas
+
+- Hero entrance
+- Text reveal
+- Scroll transitions
+- Project card hover
+- Image scaling
+- Section transitions
+- Navigation interactions
+- Button micro-interactions
+- Terminal interactions
+
+### Animation Philosophy
+
+```text
+Motion
+ ↓
+Purpose
+ ↓
+Feedback
+ ↓
+Better UX
+```
+
+Animations should remain:
+
+- Smooth
+- Lightweight
+- Meaningful
+- Responsive
+- Accessible
+
+---
+
+# 📱 Responsive Design
 
 The portfolio is designed for:
 
+```text
 Desktop
    ↓
 Laptop
@@ -601,371 +750,873 @@ Laptop
 Tablet
    ↓
 Mobile
+```
 
-Desktop
+Responsive considerations include:
 
-Large typography
+- Flexible typography
+- Responsive grids
+- Mobile navigation
+- Adaptive project cards
+- Touch-friendly buttons
+- Responsive images
+- Proper spacing
+- Readable content
 
-Multi-column layouts
+---
 
-Advanced cursor interactions
+# ♿ Accessibility
 
-Project hover effects
+Accessibility is considered throughout the interface.
 
-Tablet
+Important areas include:
 
-Flexible grids
+- Semantic HTML
+- Keyboard navigation
+- Readable contrast
+- Accessible buttons
+- Descriptive links
+- Responsive typography
+- Reduced-motion consideration
+- Clear focus states
 
-Rebalanced spacing
+The goal is to make the portfolio usable by as many people as possible.
 
-Reduced animation intensity
+---
 
-Mobile
+# ⚡ Performance
 
-Single-column layout
+Performance is treated as an important part of the portfolio.
 
-Touch-friendly controls
+### Optimization Areas
 
-Compact navigation
+- Optimized images
+- Component organization
+- Efficient animations
+- Reduced unnecessary rendering
+- Responsive assets
+- Lazy loading where appropriate
+- Optimized deployment
+- Clean frontend architecture
 
-No desktop-only cursor
+### Performance Goal
 
-Optimized typography
+```text
+Fast Loading
+     ↓
+Smooth Interaction
+     ↓
+Better Experience
+     ↓
+Professional Product
+```
 
-No horizontal overflow
+---
 
-♿ Accessibility
+# 🧑‍💻 Developer Terminal
 
-The portfolio should support:
+The portfolio includes a developer-terminal-inspired section.
 
-Semantic HTML
+The terminal presents developer information in a technical and interactive format.
 
-Keyboard navigation
+Example commands:
 
-Visible focus states
+```text
+$ whoami
+Dhanushkaran M
 
-Accessible buttons
+$ role
+AI & Data Science Student | Software Developer
 
-Accessible external links
+$ focus
+Java | DSA | Software Development
 
-Responsive text
+$ projects
+AI Placement Mentor Agent
+Tree Plantation Calculator
+AI Summarizer
+SignBridge-AI
 
-Good contrast
+$ status
+Learning • Building • Improving
+```
 
-Reduced-motion support
+The terminal is designed as a visual representation of the developer mindset.
 
-Touch-friendly controls
+---
 
-⚡ Performance
+# 🏆 Achievements
 
-Visual quality should not compromise speed.
+The portfolio includes a dedicated achievement section for important milestones.
 
-Optimized Images
-      +
-Lazy Loading
-      +
-Code Splitting
-      +
-GPU-friendly Transforms
-      +
-Controlled Animations
-      +
-Responsive Rendering
-      =
-Fast Interactive Portfolio
+### Highlight
 
-Prefer:
+🏆 **KPR Hackathon 3.0 — Selected for Round 2**
 
-transform
-opacity
+The achievement section is designed to make important accomplishments easy to identify.
 
-for animations to minimize unnecessary layout work.
+---
 
-🔐 External Links
+# 📜 Certifications
 
-External links should use secure browser behavior:
+The portfolio includes a digital credentials section.
 
-target="_blank"
-rel="noopener noreferrer"
+### Certifications
 
-Live project buttons must point directly to the actual deployed
-applications.
+- NPTEL — The Joy of Computing Using Python
+- Infosys Springboard — Data Structures and Algorithms Using Python
+- AWS — Foundations of Prompt Engineering
+- IBM — Generative AI Essentials: Using LLMs to Work with Data
 
-📂 Project Structure
+The purpose of the certification section is to demonstrate continuous learning and structured technical development.
 
-dhanushkaran-portfolio/
-│
-├── app/
-│   ├── page.tsx
-│   ├── projects/
-│   ├── resume/
-│   └── ...
-│
-├── components/
-│   ├── Navbar/
-│   ├── Hero/
-│   ├── About/
-│   ├── Projects/
-│   ├── Experience/
-│   ├── Skills/
-│   ├── Achievements/
-│   ├── Credentials/
-│   ├── Terminal/
-│   ├── Contact/
-│   └── ...
-│
-├── data/
-│   ├── projects
-│   ├── certificates
-│   └── ...
-│
-├── public/
-│   ├── images/
-│   └── assets/
-│
-├── lib/
-├── styles/
-├── package.json
-├── tsconfig.json
-└── README.md
+---
 
-🛠️ Local Development
+# 🎓 Education
 
-git clone <YOUR_REPOSITORY_URL>
-cd dhanushkaran-portfolio
-npm install
-npm run dev
+### Bachelor of Technology / Engineering
 
-Open:
+**Artificial Intelligence & Data Science**
 
-http://localhost:3000
+Final-year student focused on software development, programming fundamentals, problem solving, and practical project development.
 
-🚀 Production
+---
 
-npm run build
-npm start
-npm run lint
+# 📄 Resume Integration
 
-☁️ Deployment
+The portfolio provides direct access to the professional resume.
 
-The portfolio is deployed through Vercel.
+### Resume Flow
 
-GitHub
+```text
+Portfolio
    ↓
-Push Code
+Resume CTA
    ↓
+Resume Document
+   ↓
+Professional Profile
+```
+
+The resume and portfolio are designed to work together as two parts of the same professional identity.
+
+---
+
+# 🔗 Social & Professional Links
+
+The portfolio provides access to professional profiles.
+
+### GitHub
+
+```text
+github.com/dhanushkaran5
+```
+
+### LinkedIn
+
+```text
+linkedin.com/in/dhanushkaran-m-35ab77330
+```
+
+These links allow recruiters and developers to explore the complete development profile.
+
+---
+
+# 📬 Contact Section
+
+The contact section provides a simple way for visitors to connect.
+
+The section focuses on:
+
+- Clean layout
+- Clear call-to-action
+- Professional presentation
+- Easy navigation
+- Social profile access
+
+---
+
+# 🔐 Security Considerations
+
+Although the portfolio is primarily a frontend application, development follows good practices.
+
+Important areas include:
+
+- Environment variable protection
+- No unnecessary secret exposure
+- Secure deployment configuration
+- Safe external links
+- Dependency management
+- Input validation where applicable
+
+Sensitive credentials should never be committed to the repository.
+
+---
+
+# 🚀 Deployment
+
+The portfolio is designed for modern web deployment.
+
+### Deployment Architecture
+
+```text
+GitHub Repository
+       ↓
 Vercel
-   ↓
-Build
-   ↓
-Deploy
-   ↓
-Production Portfolio
+       ↓
+Next.js Build
+       ↓
+Production Application
+       ↓
+Public Portfolio
+```
 
-Production URL
+### Live Application
 
+```text
 https://dhanushkaran-portfolio.vercel.app/
+```
 
-🔄 Development Workflow
+---
 
-IDEA
- ↓
-PLAN
- ↓
-DESIGN
- ↓
-CODE
- ↓
-TEST
- ↓
-DEBUG
- ↓
-IMPROVE
- ↓
-DEPLOY
+# ⚙️ Local Development
 
-🧪 Production Checklist
+## Requirements
 
-[✓] TypeScript check
-[✓] Production build
-[✓] Responsive testing
-[✓] Navigation testing
-[✓] Project links
-[✓] Credential links
-[✓] Resume link
-[✓] GitHub link
-[✓] LinkedIn link
-[✓] Mobile menu
-[✓] Animation testing
+Before running the project, install:
+
+- Node.js
+- npm
+- Git
+- VS Code
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/dhanushkaran5/dhanushkaran-portfolio.git
+
+cd dhanushkaran-portfolio
+
+npm install
+```
+
+---
+
+## Development Server
+
+```bash
+npm run dev
+```
+
+The application will then be available through the local development server.
+
+---
+
+## Production Build
+
+```bash
+npm run build
+```
+
+---
+
+## Start Production Build
+
+```bash
+npm start
+```
+
+---
+
+# 🧪 Testing & Quality Checks
+
+Important areas to verify before deployment:
+
+### UI
+
+- Hero rendering
+- Navigation
+- Project cards
+- Buttons
+- Animations
+- Responsive layouts
+
+### Responsive Testing
+
+```text
+Desktop
+Tablet
+Mobile
+```
+
+### Functional Testing
+
+- Navigation links
+- Project links
+- GitHub links
+- LinkedIn links
+- Resume access
+- Contact interactions
+
+### Performance Testing
+
+- Initial loading
+- Image loading
+- Animation smoothness
+- Mobile performance
+- Production build
+
+---
+
+# 📊 Portfolio Quality Checklist
+
+```text
+[✓] Responsive design
+[✓] Modern UI
+[✓] Project showcase
+[✓] Experience section
+[✓] Skills section
+[✓] Achievements
+[✓] Certifications
+[✓] Resume
+[✓] GitHub
+[✓] LinkedIn
+[✓] Contact
 [✓] Accessibility
-[✓] External links
-[✓] No horizontal overflow
-[✓] Image optimization
+[✓] Performance
+[✓] Deployment
+```
 
-🎨 Design Principles
+---
 
-01 --- Clarity
+# 🌟 Unique Features
 
-Content should remain understandable even without animation.
+The portfolio differentiates itself through:
 
-02 --- Personality
+### 1. Developer Identity
 
-The design should communicate the developer behind the code.
+Not just a resume, but a complete digital developer profile.
 
-03 --- Motion
+### 2. Project Storytelling
 
-Animation should guide attention and improve navigation.
+Projects are presented through:
 
-04 --- Performance
+```text
+Problem
+ ↓
+Solution
+ ↓
+Technology
+ ↓
+Architecture
+ ↓
+Result
+```
 
-Interactive design should remain fast.
+### 3. Premium UI
 
-05 --- Authenticity
+The interface uses:
 
-Projects, skills and achievements should represent genuine work.
+- Editorial design
+- Bento layouts
+- Glassmorphism
+- Motion
+- Micro-interactions
 
-🧭 Design Inspiration
+### 4. Developer Terminal
 
-The portfolio takes inspiration from modern premium developer
-portfolios, particularly typography, smooth scrolling, motion design,
-Bento layouts and interactive project presentation.
+A terminal-inspired section provides a technical representation of the developer profile.
 
-Reference inspiration:
+### 5. Interactive Project Showcase
 
-https://www.rameshwarbhagwat.me/
+Projects are presented as interactive cards instead of static resume bullets.
 
-The portfolio identity, content and assets are maintained for
-Dhanushkaran M.
+### 6. Recruiter-Oriented Structure
 
-📊 Portfolio Experience Map
+The most important information is placed in a clear hierarchy:
 
-                    DHANUSHKARAN M
-                           │
-          ┌────────────────┼────────────────┐
-          ↓                ↓                ↓
-        ABOUT          EXPERIENCE        PROJECTS
-          │                │                │
-          ↓                ↓                ↓
-       SKILLS         ACHIEVEMENTS      LIVE APPS
-          │                │                │
-          └────────────────┼────────────────┘
-                           ↓
-                     CREDENTIALS
-                           ↓
-                       TERMINAL
-                           ↓
-                        CONTACT
+```text
+Who I Am
+ ↓
+What I Build
+ ↓
+What I Know
+ ↓
+What I Have Done
+ ↓
+How To Contact Me
+```
 
-🌱 Project Philosophy
+---
 
-Projects are built around practical problems and learning through
-implementation.
+# 🗺️ Development Roadmap
 
-Primary exploration areas:
+## Phase 1 — Foundation
 
-AI
-Software Development
-Career Technology
-Sustainability
-Data
-Automation
-Web Applications
-Problem Solving
+- [x] Portfolio architecture
+- [x] Hero section
+- [x] About section
+- [x] Experience
+- [x] Projects
+- [x] Skills
+- [x] Achievements
+- [x] Credentials
+- [x] Resume
+- [x] Contact
 
-🎯 Current Development Focus
+---
 
+## Phase 2 — Experience
+
+- [x] Responsive layouts
+- [x] Premium visual system
+- [x] Project interactions
+- [x] Smooth scrolling
+- [x] Micro-interactions
+- [x] Developer terminal
+
+---
+
+## Phase 3 — Optimization
+
+- [x] Performance improvements
+- [x] Responsive optimization
+- [x] Accessibility improvements
+- [x] Deployment
+- [x] Cross-device testing
+
+---
+
+## Phase 4 — Future Improvements
+
+- [ ] More project case studies
+- [ ] More interactive project demonstrations
+- [ ] Improved analytics
+- [ ] Additional developer tools
+- [ ] Continuous UI improvements
+- [ ] Additional performance optimization
+
+---
+
+# 🌍 Portfolio Impact
+
+The portfolio is designed to help communicate technical work to:
+
+- Recruiters
+- Hiring managers
+- Software developers
+- College communities
+- Hackathon judges
+- Potential collaborators
+
+It provides a centralized location for understanding the developer profile.
+
+---
+
+# 📚 Learning Outcomes
+
+Building the portfolio provides practical experience in:
+
+### Frontend Development
+
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Component architecture
+
+### UI Engineering
+
+- Responsive design
+- Layout systems
+- Typography
+- Design hierarchy
+- Micro-interactions
+
+### Animation
+
+- Framer Motion
+- Scroll animations
+- Transition systems
+- Interactive feedback
+
+### Development
+
+- Git
+- GitHub
+- VS Code
+- Project organization
+- Deployment
+
+### Product Thinking
+
+- User experience
+- Information architecture
+- Project storytelling
+- Accessibility
+- Performance
+
+---
+
+# 🧠 Development Philosophy
+
+The portfolio follows this development philosophy:
+
+```text
+Correctness
+    ↓
+User Experience
+    ↓
+Accessibility
+    ↓
+Visual Quality
+    ↓
+Performance
+    ↓
+Maintainability
+    ↓
+Scalability
+```
+
+The priority is not simply to make a website that looks good.
+
+The goal is to create a portfolio that is:
+
+> **Useful + Professional + Fast + Accessible + Maintainable**
+
+---
+
+# 🎯 Career Focus
+
+My current professional direction is:
+
+```text
+Programming Fundamentals
+        ↓
 Java
-  +
+        ↓
 Data Structures & Algorithms
-  +
+        ↓
+SQL
+        ↓
 Software Development
-  +
+        ↓
 Full-Stack Development
-  +
-Real-world Projects
+        ↓
+Real-World Projects
+        ↓
+Software Developer
+```
 
-🔮 Future Improvements
+The portfolio reflects a continuous learning approach rather than claiming technologies that I am not currently focused on.
 
-Potential improvements:
+---
 
-Advanced project case studies
+# 👨‍💻 Developer Responsibilities
 
-Better project previews
+The portfolio represents my work across multiple areas.
 
-More interactive experiences
+### Software Development
 
-Improved accessibility
+- Learning Java
+- Practicing DSA
+- Building practical applications
+- Understanding backend development
+- Working with databases
 
-Performance optimization
+### Frontend Development
 
-Detailed technical write-ups
+- Building responsive interfaces
+- Creating reusable UI components
+- Improving user experience
+- Implementing interactive experiences
 
-Enhanced mobile interactions
+### Project Development
 
-Additional verified credentials
+- Problem identification
+- Solution design
+- Implementation
+- Testing
+- Deployment
+- Continuous improvement
 
-More developer tools
+---
 
-🔗 Important Links
+# 🔀 Git Workflow
 
-Resource                            Link
+The project follows a standard Git-based development workflow.
 
-🌐 Portfolio                        https://dhanushkaran-portfolio.vercel.app/
+```text
+Create Feature
+      ↓
+Develop
+      ↓
+Test
+      ↓
+Review
+      ↓
+Commit
+      ↓
+Push
+      ↓
+Deploy
+```
 
-🤖 AI Placement Mentor              https://ai-placement-mentor-1-4gyw.onrender.com/
+Example:
 
-🌱 Tree Plantation Calculator       https://tree-plantation-calculator-1.onrender.com/
+```bash
+git status
 
-📄 AI Summarizer                    https://ai-summarizer-1-8nq8.onrender.com/
+git add .
 
-💻 GitHub                           https://github.com/dhanushkaran5
+git commit -m "Update portfolio"
 
-💼 LinkedIn                         https://linkedin.com/in/dhanushkaran-m-35ab77330
+git push origin main
+```
 
-📬 Contact
+---
 
-For collaboration, project discussions or professional opportunities:
+# 📌 Development Principles
 
-Portfolio:
+The portfolio development process focuses on:
+
+```text
+Clean Code
+    +
+Consistent UI
+    +
+Reusable Components
+    +
+Responsive Design
+    +
+Performance
+    +
+Accessibility
+    +
+Continuous Improvement
+```
+
+---
+
+# ⚠️ Disclaimer
+
+The portfolio represents my current learning journey, projects, experience, and technical development.
+
+Technology skills evolve continuously.
+
+Project implementations may also evolve as new features, optimizations, and improvements are added.
+
+The portfolio should therefore be viewed as a representation of my current development stage and ongoing learning process.
+
+---
+
+# 🚧 Project Status
+
+### Status: 🟢 Active Development
+
+The portfolio is continuously improved through:
+
+- New projects
+- UI improvements
+- Performance optimization
+- Better project explanations
+- New certifications
+- New achievements
+- Technical learning
+- Professional growth
+
+```text
+Learning
+   ↓
+Building
+   ↓
+Testing
+   ↓
+Improving
+   ↓
+Deploying
+   ↓
+Repeating
+```
+
+---
+
+# 📸 Screenshots
+
+Portfolio screenshots can be added here as the project evolves.
+
+```text
+screenshots/
+├── hero.png
+├── about.png
+├── experience.png
+├── projects.png
+├── skills.png
+├── achievements.png
+├── credentials.png
+├── terminal.png
+└── contact.png
+```
+
+---
+
+# 🌐 Live Demo
+
+### Portfolio
+
 https://dhanushkaran-portfolio.vercel.app/
 
-GitHub:
+---
+
+# 🔗 Source Code
+
+### GitHub
+
+https://github.com/dhanushkaran5/dhanushkaran-portfolio
+
+---
+
+# 📋 Quick Summary
+
+| Category | Details |
+|---|---|
+| Project | Dhanushkaran M Developer Portfolio |
+| Type | Personal Developer Portfolio |
+| Domain | Software Development |
+| Frontend | Next.js + React |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Animation | Framer Motion |
+| Smooth Scroll | Lenis |
+| Icons | Lucide React |
+| Version Control | Git + GitHub |
+| Deployment | Vercel |
+| Primary Focus | Software Development |
+| Current Learning | Java + DSA + SQL |
+| Design | Premium Dark Editorial |
+| Status | Active Development |
+
+---
+
+# 👤 Developer
+
+## Dhanushkaran M
+
+**AI & Data Science Student | Software Developer | Builder**
+
+### Current Focus
+
+```text
+Java
+DSA
+SQL
+Software Development
+Full-Stack Development
+Real-World Projects
+```
+
+### Developer Philosophy
+
+> **Code • Learn • Solve • Repeat**
+
+---
+
+# 💭 Why This Portfolio Matters
+
+A portfolio should not simply answer:
+
+> “What is on my resume?”
+
+It should answer:
+
+> “Who is this developer, what can they build, what are they learning, and how do they approach software development?”
+
+This portfolio brings together:
+
+```text
+Education
+    +
+Experience
+    +
+Projects
+    +
+Skills
+    +
+Achievements
+    +
+Certifications
+    +
+Learning
+    +
+Developer Identity
+```
+
+into one professional digital experience.
+
+---
+
+# 🚀 Final Vision
+
+The long-term vision of this portfolio is:
+
+```text
+Student Portfolio
+       ↓
+Developer Identity
+       ↓
+Project Showcase
+       ↓
+Professional Brand
+       ↓
+Software Developer Portfolio
+       ↓
+Continuous Technical Growth
+```
+
+The portfolio will continue evolving as I:
+
+- Learn new technologies
+- Build new projects
+- Improve existing applications
+- Participate in hackathons
+- Gain professional experience
+- Strengthen software development fundamentals
+- Grow as a developer
+
+The final goal is not to create a static portfolio.
+
+It is to create a **living representation of my journey as a software developer**.
+
+---
+
+# ⚡ Final Message
+
+Built with:
+
+**Code • Curiosity • Consistency • Continuous Learning**
+
+> **Learning today. Building tomorrow. Improving every day.**
+
+---
+
+## ⭐ If you like this portfolio
+
+Feel free to explore the source code, projects, and development journey.
+
+### Connect With Me
+
+**GitHub:**  
 https://github.com/dhanushkaran5
 
-LinkedIn:
+**LinkedIn:**  
 https://linkedin.com/in/dhanushkaran-m-35ab77330
 
-👋 Developer Note
+---
 
-This portfolio is continuously evolving.
+# ⚡ Dhanushkaran M
 
-Every feature represents something learned.
-Every bug represents something understood.
-Every project represents something built.
+### Code • Learn • Solve • Repeat
 
-CODE
- ↓
-LEARN
- ↓
-BUILD
- ↓
-DEBUG
- ↓
-SOLVE
- ↓
-REPEAT
-
-::: {align="center"}
-
-⚡ DHANUSHKARAN M
-
-AI & Data Science Student · Software Developer
-
-Code • Learn • Solve • Repeat
-
-🚀 Explore My Portfolio
-
-https://dhanushkaran-portfolio.vercel.app/
-
-Thanks for visiting! ⭐
-:::
+**Building projects. Learning continuously. Growing into a software developer.**
