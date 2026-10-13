@@ -482,7 +482,7 @@ through software development and technology-driven solutions.`,
 
     certifications: `VERIFIED CREDENTIALS:
   • NPTEL: The Joy of Computing Using Python (IIT Madras)
-  • Infosys Springboard: Data Structures and Algorithms Using Python; Generative AI
+  • Infosys Springboard: Data Structures and Algorithms using Python - Part 1
   • Amazon Web Services (AWS): Foundations of Prompt Engineering
   • IBM: Generative AI Essentials: Using LLMs to Work with Data`,
 
